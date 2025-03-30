@@ -71,6 +71,112 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PTF" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/PTF/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:47:33.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/PTF/">PTF</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><ul>
+<li>看得见，摸得着</li>
+<li>外观，简单的交互，界面的显示</li>
+<li>HTML    JS</li>
+<li>cookie：用户身份</li>
+</ul>
+<h4 id="抓包工具"><a href="#抓包工具" class="headerlink" title="抓包工具"></a>抓包工具</h4><h5 id="Burp-Suite"><a href="#Burp-Suite" class="headerlink" title="Burp Suite"></a>Burp Suite</h5><ul>
+<li>设置搜索prox,,手动代理配置，输入http代理和端口</li>
+<li>使用插件proxy</li>
+</ul>
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><h4 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h4><ul>
+<li>业务处理逻辑之所在</li>
+<li>输入处理的地方，数据存储的地方</li>
+</ul>
+<h4 id="代码找寻（php"><a href="#代码找寻（php" class="headerlink" title="代码找寻（php)"></a>代码找寻（php)</h4><ul>
+<li>robots.txt</li>
+<li>Comment</li>
+<li>.pyc</li>
+<li>.DS_Store（临时脚本）</li>
+<li>.git（版本管理）</li>
+<li>.svn</li>
+<li>bak file(.tar.gz&#x2F;.rar&#x2F;.zip&#x2F;.7z)</li>
+<li>查看页内源代码</li>
+<li>pyc文件（反汇编）</li>
+</ul>
+<h5 id="vim-swap-backup-file-bak-php-php-php-swp"><a href="#vim-swap-backup-file-bak-php-php-php-swp" class="headerlink" title="vim swap&#x2F;backup file(.bak&#x2F;.php.&#x2F;.php~&#x2F;.php.swp)"></a>vim swap&#x2F;backup file(.bak&#x2F;.php.&#x2F;.php~&#x2F;.php.swp)</h5><h6 id="backup-file-文件备份"><a href="#backup-file-文件备份" class="headerlink" title="backup file(文件备份)"></a>backup file(文件备份)</h6><ul>
+<li>web.tar.gz</li>
+<li><a target="_blank" rel="noopener" href="http://www.zip/">www.zip</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.tar.gz/">www.tar.gz</a></li>
+<li>web.rar</li>
+<li>…….</li>
+</ul>
+<h4 id="弱类型比较问题"><a href="#弱类型比较问题" class="headerlink" title="弱类型比较问题"></a>弱类型比较问题</h4><ul>
+<li>可以是整型或者浮点型，无明确指定</li>
+<li>强类型与弱类型：-C++，Java是强类型，需要提前声明变量类型和名称；不经强制转换则永远是该数据类型 。 -弱类型要求不严格，可以类型相互转换。</li>
+<li>“&#x3D; &#x3D;”和”&#x3D; &#x3D; &#x3D;”的区别：<br>  “&#x3D; &#x3D;”如果两边类型不同，会自动转化类型。<br> 1.字符串和数字比较，字符串会被转化成数字：如：”admin”&#x3D; &#x3D;0（true) (admin会被转换成数字，由于admin是字符串，转换失败，所以会转换为0，所以0&#x3D; &#x3D;0，所以是正确的)<br> 2.混合字符串转化为数字，看字符串的第一个（”1admin”&#x3D; &#x3D;1 , “2admin”&#x3D; &#x3D;2)<br> 3.字符串开头以xex开头，x代表数字，会被转换成科学计数法。（1e9&#x3D; &#x3D;1x（10的九次方））<br>-“&#x3D; &#x3D; &#x3D;“要求类型是相同的</li>
+</ul>
+<h3 id="请求包–相应包"><a href="#请求包–相应包" class="headerlink" title="请求包–相应包"></a>请求包–相应包</h3><ul>
+<li>浏览器发送请求包</li>
+<li>服务器回复响应包</li>
+<li>格式解析</li>
+</ul>
+<h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li>破解，利用成功（程序的二进制漏洞）</li>
+<li>攻破（设备，服务器）</li>
+<li>控制（设备，服务器）</li>
+</ul>
+<hr>
+<ul>
+<li><strong>exploit</strong> : 用于攻击的脚本与方案</li>
+<li><strong>payload</strong> :攻击载荷，是目标进程被劫持控制流的数据</li>
+<li><strong>shellcode</strong> :调用攻击目标的shell的代码</li>
+</ul>
+<h1 id="逆向-（Reverse）"><a href="#逆向-（Reverse）" class="headerlink" title="逆向 （Reverse）"></a>逆向 （Reverse）</h1><h2 id="解题流程"><a href="#解题流程" class="headerlink" title="解题流程"></a>解题流程</h2><p>1.<strong>突破保护<br>2.定位关键代码<br>3.动静结合<br>4.破解算法</strong></p>
+<h2 id="CTF逆向tips"><a href="#CTF逆向tips" class="headerlink" title="CTF逆向tips"></a>CTF逆向tips</h2><ul>
+<li>集中原则</li>
+<li>代码复用（github中搜索）</li>
+<li>七分逆向三分猜</li>
+<li>区分代码（人为编写：库函数代码，出题人代码，编译器自动附加代码）</li>
+</ul>
+<hr>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><h2 id="隐写"><a href="#隐写" class="headerlink" title="隐写"></a>隐写</h2><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><strong>软件</strong>：010<br>十六进制：</p>
+<h3 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h3><h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><h2 id="取证"><a href="#取证" class="headerlink" title="取证"></a>取证</h2><ul>
+<li>流量包</li>
+<li>压缩包</li>
+<li>固件分析</li>
+</ul>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p><strong>base64</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/PTF/" data-id="cm8vgj7ui0000z8v6btfh8z9g" data-title="PTF" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-MISC-隐写" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/" class="article-date">
@@ -749,6 +855,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/30/PTF/">PTF</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/">MISC-隐写</a>
           </li>
         
@@ -762,10 +872,6 @@
         
           <li>
             <a href="/2025/03/30/python/">python</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/x86-2/">x86.2</a>
           </li>
         
       </ul>
