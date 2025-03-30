@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>流量分析 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="概述流量分析常涉及到解密、协议分析、会话重建等技巧，是考察选手对网络协议及工具熟练掌握程度的一 个重要方向。（ 通常题目会提供一个 .pcap 文件，它是网络数据包的捕获文件，我们需要分析其中的流量数据。） 工具Wireshark：最流行的网络协议分析工具，功能强大，可视化流量，支持各种协议的分析。 使用方法1、打开wireshark，主界面如下： 2、选择菜单栏上 捕获 -&gt; 选项，勾选W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流量分析">
+<meta property="og:url" content="http://example.com/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述流量分析常涉及到解密、协议分析、会话重建等技巧，是考察选手对网络协议及工具熟练掌握程度的一 个重要方向。（ 通常题目会提供一个 .pcap 文件，它是网络数据包的捕获文件，我们需要分析其中的流量数据。） 工具Wireshark：最流行的网络协议分析工具，功能强大，可视化流量，支持各种协议的分析。 使用方法1、打开wireshark，主界面如下： 2、选择菜单栏上 捕获 -&gt; 选项，勾选W">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d043c694d8244e6b86175ef767b7a192.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/de02a276b75c10046502f808dfd54aa0.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d95525bc836860f87317456d4a430935.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/fdb0b9c085120775e78e9bcec4330c6c.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6ddaee23653125517540b9d58f0a88d8.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/e60dce7cabe3c3d1be31d39b2e832b10.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/ee4a828d5137acd94af7a79b5301dbfa.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/adfb78074d23e7a9931de4efe722302f.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/32d11e3151e56746c8b7ecbb5c3c9d3e.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/8908a405a952c3450b777f05014a0867.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/1cbee059677d58e407b1e1136d59fab6.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/66dc94e16a17de70965b02e455e9a246.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/129d1fa81005446f0ef1620996500b71.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/66d2d960412e6624c86451ea0137d930.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/76c021956a77f8a3bbf8cef7050b37c9.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/f6374d1e711c1be3d2d522aebd87a434.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/4ea56a2d3ebfb80602d2b1dfb4a517f3.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6f97ef46b15add2a40662ceedb127e4f.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/1c503371fed0145a6be0f01d777e848d.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/11246e52c996202421b5683babac60aa.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/6040b527cb1455ba47e56b3b987d2394.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/cbc90d6ad8b348aeaa124fc02b2d14eb.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2106f4fc03bec62c6b38b44bb2a49b2d.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/bd1123d7e598bbc21aeb2fc736b3fb16.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/690026ec008d54a97713049736aa078f.png">
+<meta property="article:published_time" content="2025-03-30T09:52:35.000Z">
+<meta property="article:modified_time" content="2025-03-30T09:52:42.880Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/d043c694d8244e6b86175ef767b7a192.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-流量分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:52:35.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      流量分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>流量分析常涉及到解密、协议分析、会话重建等技巧，是考察选手对网络协议及工具熟练掌握程度的一 个重要方向。（ 通常题目会提供一个 .pcap 文件，它是网络数据包的捕获文件，我们需要分析其中的流量数据。）</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>Wireshark：最流行的网络协议分析工具，功能强大，可视化流量，支持各种协议的分析。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>1、打开wireshark，主界面如下：<br><img src="https://i-blog.csdnimg.cn/blog_migrate/d043c694d8244e6b86175ef767b7a192.png"></p>
+<p>2、选择菜单栏上 捕获 -&gt; 选项，勾选WLAN网卡。这里需要根据各自电脑网卡使用情况选择，简单的办法可以看使用的IP对应的网卡。点击Start，启动抓包。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/de02a276b75c10046502f808dfd54aa0.png"></p>
+<p>3、wireshark启动后，wireshark处于抓包状态中。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/d95525bc836860f87317456d4a430935.png"></p>
+<p>4、执行需要抓包的操作，如在cmd窗口下执行ping <a target="_blank" rel="noopener" href="http://www.baidu.com./">www.baidu.com。</a><br><img src="https://i-blog.csdnimg.cn/blog_migrate/fdb0b9c085120775e78e9bcec4330c6c.png"></p>
+<p>5、操作完成后相关数据包就抓取到了，可以点击 停止捕获分组 按钮。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/6ddaee23653125517540b9d58f0a88d8.png"></p>
+<p>6、为避免其他无用的数据包影响分析，可以通过在过滤栏设置过滤条件进行数据包列表过滤，获取结果如下。说明：ip.addr &#x3D;&#x3D; 183.232.231.172 and icmp 表示只显示ICPM协议且主机IP为183.232.231.172的数据包。说明：协议名称icmp要小写。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/e60dce7cabe3c3d1be31d39b2e832b10.png"></p>
+<p>7、wireshark抓包完成，并把本次抓包或者分析的结果进行保存，就这么简单。关于wireshark显示过滤条件、抓包过滤条件、以及如何查看数据包中的详细内容在后面介绍。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/ee4a828d5137acd94af7a79b5301dbfa.png"></p>
+<h3 id="抓包页面介绍"><a href="#抓包页面介绍" class="headerlink" title="抓包页面介绍"></a>抓包页面介绍</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/adfb78074d23e7a9931de4efe722302f.png"><br>Wireshark 的主界面包含6个部分：</p>
+<ul>
+<li>菜单栏：用于调试、配置</li>
+<li>工具栏：常用功能的快捷方式</li>
+<li>过滤栏：指定过滤条件，过滤数据包</li>
+<li>数据包列表：核心区域，每一行就是一个数据包</li>
+<li>数据包详情：数据包的详细数据</li>
+<li>数据包字节：数据包对应的字节流，二进制</li>
+<li>说明：数据包列表区中不同的协议使用了不同的颜色区分。协议颜色标识定位在菜单栏 视图 –&gt; 着色规则。如下所示<br><img src="https://i-blog.csdnimg.cn/blog_migrate/32d11e3151e56746c8b7ecbb5c3c9d3e.png"></li>
+</ul>
+<p>WireShark 主要分为这几个界面</p>
+<ol>
+<li><p>Display Filter(显示过滤器)<br>用于设置过滤条件进行数据包列表过滤。菜单路径：分析 –&gt; Display Filters。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/8908a405a952c3450b777f05014a0867.png"></p>
+</li>
+<li><p>Packet List Pane(数据包列表)<br>显示捕获到的数据包，每个数据包包含编号，时间戳，源地址，目标地址，协议，长度，以及数据包信息。不同协议的数据包使用了不同的颜色区分显示。<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/1cbee059677d58e407b1e1136d59fab6.png"></p>
+</li>
+<li><p>Packet Details Pane(数据包详细信息)<br>在数据包列表中选择指定数据包，在数据包详细信息中会显示数据包的所有详细信息内容。数据包详细信息面板是最重要的，用来查看协议中的每一个字段。各行信息分别为</p>
+</li>
+</ol>
+<p>（1）Frame:   物理层的数据帧概况</p>
+<p>（2）Ethernet II: 数据链路层以太网帧头部信息</p>
+<p>（3）Internet Protocol Version 4: 互联网层IP包头部信息</p>
+<p>（4）Transmission Control Protocol:  传输层T的数据段头部信息，此处是TCP</p>
+<p>（5）Hypertext Transfer Protocol:  应用层的信息，此处是HTTP协议<br><img src="https://i-blog.csdnimg.cn/blog_migrate/66dc94e16a17de70965b02e455e9a246.png"></p>
+<p>TCP包的具体内容</p>
+<p>从下图可以看到wireshark捕获到的TCP包中的每个字段。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/129d1fa81005446f0ef1620996500b71.png"><br><img src="https://i-blog.csdnimg.cn/blog_migrate/66d2d960412e6624c86451ea0137d930.png"><br>4. Dissector Pane(数据包字节区)<br>报文原始内容。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/76c021956a77f8a3bbf8cef7050b37c9.png"></p>
+<h3 id="过滤器设置"><a href="#过滤器设置" class="headerlink" title="过滤器设置"></a>过滤器设置</h3><p>初学者使用wireshark时，将会得到大量的冗余数据包列表，以至于很难找到自己需要抓取的数据包部分。wireshark工具中自带了两种类型的过滤器，学会使用这两种过滤器会帮助我们在大量的数据中迅速找到我们需要的信息。<br>1.抓包过滤器<br>捕获过滤器的菜单栏路径为 捕获 –&gt; 捕获过滤器。用于在抓取数据包前设置。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/f6374d1e711c1be3d2d522aebd87a434.png"></p>
+<p>如何使用呢？设置如下。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/4ea56a2d3ebfb80602d2b1dfb4a517f3.png"></p>
+<p>ip host 183.232.231.172表示只捕获主机IP为183.232.231.172的数据包。获取结果如下：<br><img src="https://i-blog.csdnimg.cn/blog_migrate/6f97ef46b15add2a40662ceedb127e4f.png"></p>
+<ol start="2">
+<li>显示过滤器<br>显示过滤器是用于在抓取数据包后设置过滤条件进行过滤数据包。</li>
+</ol>
+<p>通常是在抓取数据包时设置条件相对宽泛或者没有设置导致抓取的数据包内容较多时使用显示过滤器设置条件过滤以方便分析。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/1c503371fed0145a6be0f01d777e848d.png"></p>
+<p>执行ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 获取的数据包列表如下<br><img src="https://i-blog.csdnimg.cn/blog_migrate/11246e52c996202421b5683babac60aa.png"><br>观察上述获取的数据包列表，含有大量的无效数据。这时可以通过设置显示器过滤条件进行提取分析信息。ip.addr &#x3D;&#x3D; 183.232.231.172，并进行过滤。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/6040b527cb1455ba47e56b3b987d2394.png"></p>
+<h4 id="wireshark过滤器表达式的规则"><a href="#wireshark过滤器表达式的规则" class="headerlink" title="wireshark过滤器表达式的规则"></a>wireshark过滤器表达式的规则</h4><p>抓包过滤器语法和实例<br>抓包过滤器类型Type（host、net、port）、方向Dir（src、dst）、协议Proto（ether、ip、tcp、udp、http、icmp、ftp等）、逻辑运算符（&amp;&amp;与、|| 或、！非）</p>
+<p>（1）协议过滤</p>
+<p>比较简单，直接在抓包过滤框中直接输入协议名即可。</p>
+<p>tcp，只显示TCP协议的数据包列表</p>
+<p>http，只查看HTTP协议的数据包列表</p>
+<p>icmp，只显示ICMP协议的数据包列表</p>
+<p>（2）IP过滤</p>
+<p>host 192.168.1.104</p>
+<p>src host 192.168.1.104</p>
+<p>dst host 192.168.1.104</p>
+<p>（3）端口过滤</p>
+<p>port 80</p>
+<p>src port 80</p>
+<p>dst port 80</p>
+<p>（4）逻辑运算符&amp;&amp;与、|| 或、！非</p>
+<p>src host 192.168.1.104 &amp;&amp;dst port 80 抓取主机地址为192.168.1.80、目的端口为80的数据包</p>
+<p>host 192.168.1.104 || host 192.168.1.102 抓取主机为192.168.1.104或者192.168.1.102的数据包</p>
+<p>！broadcast 不抓取广播数据包</p>
+<ol start="2">
+<li>显示过滤器语法和实例<br>（1）比较操作符</li>
+</ol>
+<p>比较操作符有</p>
+<p>&#x3D;&#x3D; 等于、！&#x3D; 不等于、&gt; 大于、&lt; 小于、&gt;&#x3D; 大于等于、&lt;&#x3D;小于等于</p>
+<p>（2）协议过滤</p>
+<p>比较简单，直接在Filter框中直接输入协议名即可。注意：协议名称需要输入小写。</p>
+<p>tcp，只显示TCP协议的数据包列表</p>
+<p>http，只查看HTTP协议的数据包列表</p>
+<p>icmp，只显示ICMP协议的数据包列表</p>
+<ol start="3">
+<li>ip过滤</li>
+</ol>
+<p>ip.src &#x3D;&#x3D;112.53.42.42 显示源地址为112.53.42.42的数据包列表</p>
+<p>ip.dst&#x3D;&#x3D;112.53.42.42, 显示目标地址为112.53.42.42的数据包列表</p>
+<p>ip.addr &#x3D;&#x3D; 112.53.42.42 显示源IP地址或目标IP地址为112.53.42.42的数据包列表</p>
+<ol start="4">
+<li>端口过滤</li>
+</ol>
+<p>tcp.port &#x3D;&#x3D;80,  显示源主机或者目的主机端口为80的数据包列表。</p>
+<p>tcp.srcport &#x3D;&#x3D; 80,  只显示TCP协议的源主机端口为80的数据包列表。</p>
+<p>tcp.dstport &#x3D;&#x3D; 80，只显示TCP协议的目的主机端口为80的数据包列表。</p>
+<p>5. http模式过滤</p>
+<p>http.request.method&#x3D;&#x3D;”GET”,   只显示HTTP GET方法的。</p>
+<ol start="6">
+<li>逻辑运算符为 and&#x2F;or&#x2F;not</li>
+</ol>
+<p>过滤多个条件组合时，使用and&#x2F;or。比如获取IP地址为192.168.0.104的ICMP数据包表达式为ip.addr &#x3D;&#x3D; 192.168.0.104 and icmp</p>
+<ol start="7">
+<li>按照数据包内容过滤</li>
+</ol>
+<p>假设我要以ICMP层中的内容进行过滤，可以单击选中界面中的码流，在下方进行选中数据。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/cbc90d6ad8b348aeaa124fc02b2d14eb.png"></p>
+<p>右键单击选中后出现如下界面<br><img src="https://i-blog.csdnimg.cn/blog_migrate/2106f4fc03bec62c6b38b44bb2a49b2d.png"><br>选中后在过滤器中显示如下<br><img src="https://i-blog.csdnimg.cn/blog_migrate/bd1123d7e598bbc21aeb2fc736b3fb16.png"></p>
+<p>后面条件表达式就需要自己填写。如下我想过滤出data数据包中包含”abcd”内容的数据流。关键词是contains，完整条件表达式为data contains “abcd”<br><img src="https://i-blog.csdnimg.cn/blog_migrate/690026ec008d54a97713049736aa078f.png"></p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>初步检查流量文件<ul>
+<li>使用Wireshark或tshark打开 .pcap 文件，查看流量总量、协议类型、IP地址和端口。</li>
+</ul>
+</li>
+<li>协议识别与分析 <ul>
+<li>确认流量中的常见协议（TCP、UDP、HTTP、DNS等），理解不同协议的特性，查找异常流 量。<br>  3.筛选和过滤数据包</li>
+<li>使用Wireshark的过滤器功能，逐步缩小感兴趣的数据包范围。比如，HTTP流量的过滤条件 是 http ，DNS是 dns ，通过源&#x2F;目的IP、端口等进一步过滤。</li>
+</ul>
+</li>
+<li>重建会话和提取内容<br>- 如果是HTTP或FTP协议，可以重建数据流，提取文件、图片或文本信息。<br>- 可以尝试通过流量中的关键字或payload查找线索，如查找flag。</li>
+<li>查找异常行为或隐藏信息<ul>
+<li>检查是否存在数据加密、编码、隐藏通信通道（如DNS隧道）。 查找流量中不常见的协议、端口或可疑的数据包，尤其是看上去无意义的流量。</li>
+</ul>
+</li>
+</ol>
+<h2 id="流量分析常见题型"><a href="#流量分析常见题型" class="headerlink" title="流量分析常见题型"></a>流量分析常见题型</h2><ul>
+<li><strong>HTTP流量分析</strong>： 题目常提供HTTP抓包文件，通过重建会话，可以获得flag，或通过特定请求的返回包中的信息来解 决问题。</li>
+<li><strong>DNS流量分析</strong>：通过DNS隧道或编码方式传递信息，需要通过流量中的域名、数据包内容进行解码，获取有用信 息。 </li>
+<li><strong>文件传输分析</strong>：抓包文件可能包含FTP、SMTP等协议的文件传输，通过提取文件或分析文件内容来解题。</li>
+<li><strong>加密或编码流量</strong>：流量可能通过某种加密或编码方式传输，利用常见的编码解密工具或自编脚本解密。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" data-id="cm8vgp5eu0000s4v62rxdgzlq" data-title="流量分析" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编码解码</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/">编码解码</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">UPX脱壳</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/retlibc1/">retlibc1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
