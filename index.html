@@ -71,6 +71,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-base64解码脚本" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:44:36.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/">base64解码脚本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>![[Pasted image 20250319204550.png]]<br>old为原来的顺序，new为此题目定义的顺序，(即此题目中Base中的A为q,B为v，以此类推）encoded为密文，解开后即为flag.<br>import base64</p>
+<p>new&#x3D;”qvEJAfHmUYjBac+u8Ph5n9Od17FrICL&#x2F;X0gVtM4Qk6T2z3wNSsyoebilxWKGZpRD”</p>
+<p>old&#x3D;”ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+&#x2F;“</p>
+<p>encoded&#x3D;”5Mc58bPHLiAx7J8ocJIlaVUxaJvMcoYMaoPMaOfg15c475tscHfM&#x2F;8&#x3D;&#x3D;”</p>
+<p>mapper&#x3D;str.maketrans(new,old)</p>
+<p>tmp&#x3D;encoded.translate(mapper)</p>
+<p>flag&#x3D;base64.b64decode(tmp)</p>
+<p>print(flag.decode())</p>
+<p>![[Pasted image 20250319204802.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/" data-id="cm8vgf6i00000q0v6ejxoclqe" data-title="base64解码脚本" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-python" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/python/" class="article-date">
@@ -502,6 +549,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/">base64解码脚本</a>
+          </li>
         
           <li>
             <a href="/2025/03/30/python/">python</a>
