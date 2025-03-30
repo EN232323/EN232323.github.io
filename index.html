@@ -71,6 +71,270 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-编码解码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:51:37.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/">编码解码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h2><p>很少使用，其大部分加密方式都是利用 <strong>替换式密码</strong> 或 <strong>移项式密码</strong>，有时则是两者的混合。<br>通常来说需要对<strong>算法和密钥保密</strong>。</p>
+<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><ul>
+<li>它是一种<strong>替换加密</strong>的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。<br>如:明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ<br> 密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC</li>
+<li>解密方法：解密的人根据事先已知的密钥反过来操作，得到原来的明文。</li>
+</ul>
+<h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><ul>
+<li>是由一些偏移量不同的恺撒密码组成。</li>
+<li>为了生成密码，需要使用<strong>表格法</strong>。</li>
+<li>&#x3D;&#x3D;<strong>密钥准备</strong>‌&#x3D;&#x3D;：密钥长度需要与明文长度相同。如果密钥长度少于明文长度，则重复拼接密钥直到与明文长度相同。</li>
+<li>&#x3D;&#x3D;‌<strong>加密过程</strong>‌&#x3D;&#x3D;：根据明文和密钥的对应字母，在维吉尼亚密码表格中找到相交点。（例如，明文第一个字母是“I”，密钥第一个字母是“o”，在表格中找到“I”列与“o”行相交点，该点对应的字母“W”即为密文第一个字母。）同理，对明文和密钥的后续字母进行相同的操作，得到完整的密文。</li>
+<li>维吉尼亚密码只对字母进行加密，密文与明文的字母大小写保持一致。</li>
+<li>若文本中出现非字母字符，会原样保留。</li>
+<li>如果输入多行文本，每行是单独加密的。</li>
+</ul>
+<h4 id="对照表"><a href="#对照表" class="headerlink" title="对照表"></a>对照表</h4><p><img src="https://img2018.cnblogs.com/blog/1228809/202002/1228809-20200228202249268-1484724482.png"></p>
+<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><p>明文：HEETIAN</p>
+<p>  密钥：LABLABL</p>
+<p>  密文：SEFEIBY</p>
+<h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><h4 id="介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A-小写代表B，正体代表A-斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）"><a href="#介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A-小写代表B，正体代表A-斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）" class="headerlink" title="介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A&#x2F;小写代表B，正体代表A&#x2F;斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）"></a>介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A&#x2F;小写代表B，正体代表A&#x2F;斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章<strong>完全无关</strong>。）</h4><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p><img src="https://bkimg.cdn.bcebos.com/pic/f9dcd100baa1cd118c10fccdb512c8fcc2ce2dbd?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080"></p>
+<h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码属于古典密码中最经典的<strong>移项式密码</strong>，同之前讲到的凯撒密码等替换式密码代表了密码学中最重要的两个概念</p>
+<p>以栏栅栏密码为例来讲解它的加密和解密过程。</p>
+<p>  加密过程：</p>
+<pre><code>    明文：THERE_IS_A_CIPHER_
+
+    两个一组，得到：(TH) (ER) (E_) (IS) (_A) (_C) (IP) (HE) (R_)
+
+    先每组中取出第一个字母：TEEI__IHR
+
+    再从每组中取出第二个字母：HR_SACPE_
+
+    连在一起得到密文：TEEI__IHRHR_SACPE_
+    
+    解密过程：
+
+    而解密的时候，先把密文从中间分开，变为两行：
+
+    TEEI__IHR
+
+    HR_SACPE_
+
+    再按上下上下的顺序组合起来：
+
+    THERE_IS_A_CIPHER_
+</code></pre>
+<p>栅栏密码的分栏的一个前提就是分的栏数需是明文长度的因数，这样才会使得分出来的每个栏长度都一样。</p>
+<p>  对于多栏，我们还是用上面的例子来讲解。</p>
+<p>  上面的明文字符串（THERE_IS_A_CIPHER_）的长度是18    </p>
+<p>  所以我们可以把它分为2，3，4，6，9栏，这里我们以6栏为例。</p>
+<p>  以每个元素相隔6个字符分割出栅栏。</p>
+<pre><code>    第一栏：TII
+
+    第二栏：HSP
+
+    第三栏：E_H
+
+    第四栏：RAE
+
+    第五栏：E_R
+
+    第六栏：_C_
+</code></pre>
+<p>  连接在一起得到密文：TIIHSPE_HRAEE_R_C_</p>
+<h3 id="希尔密码"><a href="#希尔密码" class="headerlink" title="希尔密码"></a>希尔密码</h3><p>希尔密码是运用基本矩阵论原理的替换密码</p>
+<h3 id="Ascll表"><a href="#Ascll表" class="headerlink" title="Ascll表"></a>Ascll表</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/36de2d3f0e8599fd7e6050253f78b677.png"></p>
+<h3 id="base-16"><a href="#base-16" class="headerlink" title="base 16"></a>base 16</h3><p>1.使用<strong>16个ASCII可打印字符</strong>（数字0-9和字母A-F），对任意字节数据进行编码。称 HEX (十六进制)，是不区分大小写的十六进制编码标准</p>
+<p>2.先获取输入字符串每个字节的二进制值（不足8比特在高位补0），然后将其串联进来，再按照4比特一组进行切分，将每组二进制数分别转换成十进制。</p>
+<p>　 3.Base16编码后的数据量是原数据的两倍：1000比特数据需要250个字符（即 250*8&#x3D;2000 比特）。</p>
+<p><strong>流程</strong>：给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再转化为16进制</p>
+<p><strong>注</strong>：可以看到8比特数据按照4比特切分刚好是两组，所以Base16不可能用到填充符号“&#x3D;”。</p>
+<p><strong>例：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>H</th>
+<th>e</th>
+<th>l</th>
+<th>l</th>
+<th>o</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ascll</td>
+<td>72</td>
+<td>101</td>
+<td>108</td>
+<td>108</td>
+<td>111</td>
+<td></td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>01001000</td>
+<td>01100101</td>
+<td>01101100</td>
+<td>01101100</td>
+<td>01101111</td>
+<td></td>
+</tr>
+<tr>
+<td>重新划分</td>
+<td>0100    1000</td>
+<td>0110  0101</td>
+<td>0110  1100</td>
+<td>0110  1100</td>
+<td>0110  1111</td>
+<td></td>
+</tr>
+<tr>
+<td>编码后</td>
+<td>4        8</td>
+<td>6       5</td>
+<td>6      C</td>
+<td>6       C</td>
+<td>6        F</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="base32"><a href="#base32" class="headerlink" title="base32"></a>base32</h3><p> <strong>1</strong>.Base32编码是使用**32个可打印字符（字母A-Z和数字2-7）**对任意字节数据进行编码的方案，编码后的字符串不用区分大小写并排除了容易混淆的字符，可以方便地由人类使用并由计算机处理。(1和L区分)</p>
+<p> <strong>2</strong>.Base32主要用于编码二进制数据，但是Base32也能够编码诸如ASCII之类的二进制文本。</p>
+<p><strong>3</strong>.Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，<strong>按照5比特一组进行切分</strong>，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。</p>
+<p>由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是<strong>40比特的倍数（5和8的最小公倍数）</strong>。</p>
+<p><strong>流程</strong>：给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再根据码表转换</p>
+<p><strong>重新划分</strong>：划分时最后不够5的后面先补0，总体不够<strong>40比特的倍数</strong>的补等号（一个等号就是5bit）</p>
+<p><strong>例：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">C</th>
+<th align="center">t</th>
+<th align="center">f</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ascll</td>
+<td align="center">67</td>
+<td align="center">116</td>
+<td align="center">102</td>
+</tr>
+<tr>
+<td align="center">二进制</td>
+<td align="center">01000011</td>
+<td align="center">01110100</td>
+<td align="center">01100110</td>
+</tr>
+<tr>
+<td align="center">Ctf–&gt;IN2GM&#x3D;&#x3D;&#x3D;</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>码表</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><img src="https://img-blog.csdnimg.cn/20200107094249344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MTQxODY1,size_16,color_FFFFFF,t_70"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="base-64"><a href="#base-64" class="headerlink" title="base 64"></a>base 64</h3><p>Base64是一种基于64个可打印字符来表示二进制数据的表示方法。由于，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。</p>
+<p>   由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base64按6比特切分的二进制数据必须是24<strong>比特的倍数（8和6的最小公倍数）</strong>。</p>
+<p>**流程：**给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再根据码表转换</p>
+<p><strong>重新划分：<strong>划分时最后不够6的后面先补0，总体不够24</strong>比特的倍数</strong>的补等号（一个等号就是6bit）<br>码表<br>  <img src="https://img-blog.csdnimg.cn/12bd0efeafa5431ea699385774f3824c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU2hlbm5vdGVy5Ly4,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p>
+<h3 id="base16-base32-base64的区分"><a href="#base16-base32-base64的区分" class="headerlink" title="base16,base32,base64的区分"></a>base16,base32,base64的区分</h3><ul>
+<li>base16:   范围是数字（0-9），字母（ABCDE）</li>
+<li>base32：只有大写字母（A-Z）和数字234567</li>
+<li>base64:  就是包括小写字母a-z、大写字母A-Z、数字0-9、符号”+”、”&#x2F;“一共64个字符的字符集，（任何符号都可以转换成这个字符集中的字符，这个转换过程就叫做base64编码。）</li>
+</ul>
+<h3 id="base58"><a href="#base58" class="headerlink" title="base58"></a>base58</h3><h5 id="字符表"><a href="#字符表" class="headerlink" title="字符表"></a>字符表</h5><p><strong>Base58字符表包括以下字符</strong>‌：</p>
+<ul>
+<li>码表：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/66bd667670e8b6db26c01982256cdf5c.png"></li>
+<li>数字：1, 2, 3, 4, 5, 6, 7, 8, 9</li>
+<li>大写字母：A, B, C, D, E, F, G, H, J, K, M, N, P, Q, R, S, T, U, V, W, X, Y, Z</li>
+<li>小写字母：a, b, c, d, e, f, g, h, i, j, k, m, n, o, p, q, r, s, t, u, v, w, x, y, z</li>
+</ul>
+<p>‌<strong>Base58字符表不包括以下字符</strong>‌：</p>
+<ul>
+<li>数字0（零）</li>
+<li>大写字母O（大写字母O）</li>
+<li>小写字母l（小写字母L）</li>
+<li>大写字母I（大写字母I）</li>
+<li>加号（+）</li>
+<li>斜杠（&#x2F;）</li>
+</ul>
+<h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><ol>
+<li><strong>将输入数据转换为整数</strong>：<ul>
+<li>将要编码的数据（通常是二进制数据）视为一个大整数。</li>
+</ul>
+</li>
+<li><strong>进行整数除法</strong>：<ul>
+<li>将该整数连续除以 58，并记录余数。</li>
+<li>余数将用于查找 Base58 字符集中的相应字符。</li>
+</ul>
+</li>
+<li><strong>构建结果字符串</strong>：<ul>
+<li>继续将整数除以 58，直到结果为 0。</li>
+<li>余数对应的字符按相反顺序（从最后一个余数开始）组合成结果字符串。</li>
+</ul>
+</li>
+<li><strong>处理前导零</strong>：<ul>
+<li>在输入数据中，如果有前导零，每个前导零会在结果字符串中增加一个字符 <code>&#39;1&#39;</code>。这样可以保留原始数据中的零信息。</li>
+</ul>
+</li>
+</ol>
+<h5 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h5><ol>
+<li><strong>将 Base58 字符串转换为整数</strong>：<ul>
+<li>通过将每个字符转换为相应的整数值，并用 58 的幂进行加权，计算出对应的大整数。</li>
+</ul>
+</li>
+<li><strong>将整数转换为字节</strong>：<ul>
+<li>将得到的大整数转换回原始的字节数组。</li>
+</ul>
+</li>
+<li><strong>处理前导 ‘1’</strong>：<ul>
+<li>在解码时，如果结果字符串中有前导 <code>&#39;1&#39;</code>，则在字节数组的开头添加相应数量的零字节。</li>
+</ul>
+</li>
+</ol>
+<h3 id="base-85"><a href="#base-85" class="headerlink" title="base 85"></a>base 85</h3><p>0-9  A-Z a-z !#$%&amp;()*+-;&lt;&gt;&#x3D;?@^ __’{}|~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" data-id="cm8vgo35y00000kv63wks9ka7" data-title="编码解码" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-UPX脱壳" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" class="article-date">
@@ -739,202 +1003,6 @@ return 0;
 
 
   
-    <article id="post-x86" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/30/x86/" class="article-date">
-  <time class="dt-published" datetime="2025-03-30T09:38:15.000Z" itemprop="datePublished">2025-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/30/x86/">x86</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="x86"><a href="#x86" class="headerlink" title="x86"></a>x86</h1><h4 id="字长与端序"><a href="#字长与端序" class="headerlink" title="字长与端序"></a>字长与端序</h4><ol>
-<li>内存存储单位</li>
-</ol>
-<ul>
-<li><p>内存以字节为单位。一个字节是8个比特位，可以表示2^8 &#x3D; 256个数。大小为8位的二进制数是从0开始到255这256个值中的一个。</p>
-</li>
-<li><p>两个字节被称为一个字（WORD，32位），四个字节被称为双字（DWORD，32位），八个字节被称为四字（QWORD，64位）。<br>2. 字节排列顺序（端序）</p>
-</li>
-<li><p>字节的排列顺序有两种通用规则：</p>
-</li>
-<li><p>大端序（Big - Endian）：将数据的低位字节存放在内存的高位地址，高位字节存放在低位地址。这种排列方式与数据用字节表示时的书写顺序一致，符合人类的阅读习惯。</p>
-</li>
-<li><p>小端序（Little - Endian）：将数据的低位字节存放在较小的地址，高位字节存放在较大的地址。小端序与人类的阅读习惯相反，但更符合计算机读取内存的方式，因为CPU读取内存中的数据时，是从低地址向高地址方向进行读取的。</p>
-</li>
-</ul>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>控制单元（Control Unit）</p>
-<ul>
-<li>功能：取码、译码，控制运算单元完成运算。</li>
-<li>解释：控制单元负责从内存中获取指令（取码），将指令转换为计算机能理解的形式（译码），并协调运算单元进行数据处理。<br>运算单元（Arithmetic Logic Unit, ALU）</li>
-<li>功能：作为执行部件，执行算术运算、逻辑运算。</li>
-<li>解释：运算单元负责执行实际的数学计算（如加法、乘法）和逻辑操作（如比较、判断）。<br>寄存器（Registers）</li>
-<li>功能：临时数据存储（规模小，有专用、通用之分）。</li>
-<li>解释：寄存器用于临时存储CPU在运算过程中需要快速访问的数据，它们的存储容量较小，但访问速度非常快，分为专用寄存器（如程序计数器）和通用寄存器（用于一般数据存储）。</li>
-</ul>
-<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>1. 数据寄存器（4个）</p>
-<ul>
-<li>EAX、EBX、ECX和EDX</li>
-<li>这些寄存器主要用于存储数据，在算术和逻辑运算中经常使用。例如，EAX寄存器常用于存储函数的返回值。<br>2. 变址寄存器（2个）</li>
-<li>ESI和EDI</li>
-<li>变址寄存器通常用于内存操作，如字符串操作和数据移动。例如，在字符串复制操作中，ESI可能指向源字符串，EDI指向目标字符串。<br>3. 指针寄存器（2个）</li>
-<li>ESP和EBP</li>
-<li>ESP（栈指针寄存器）用于指向栈顶，在函数调用和返回时起到关键作用。EBP（基址指针寄存器）常用于在函数内部访问局部变量和参数。<br>4. 段寄存器（6个）</li>
-<li>ES、CS、SS、DS、FS和GS</li>
-<li>段寄存器用于划分内存段，例如代码段（CS）、数据段（DS）、栈段（SS）等。它们帮助CPU定位不同类型的内存区域。<br>5. 指令指针寄存器（1个）</li>
-<li>EIP</li>
-<li>EIP（指令指针寄存器）指向当前正在执行的指令，CPU根据EIP的值来获取下一条要执行的指令。<br>6. 标志寄存器（1个）</li>
-<li>eflags</li>
-<li>标志寄存器存储了各种状态标志，如进位标志（CF）、零标志（ZF）、符号标志（SF）等，这些标志用于条件判断和控制程序流程。<br>![[eflags]]<br>7. 控制寄存器（9个）</li>
-<li>CR0 - CR8</li>
-<li>控制寄存器用于控制和配置CPU的操作模式和功能，例如CR0用于控制保护模式和实模式的切换。<br>8. 保护模式寄存器（3个）</li>
-<li>GDTR、LDTR、IDTR</li>
-<li>这些寄存器在保护模式下用于存储全局描述符表（GDT）、局部描述符表（LDT）和中断描述符表（IDT）的基地址和界限。</li>
-</ul>
-<h3 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h3><p>1. EAX</p>
-<ul>
-<li>描述：32位，用于函数返回值。</li>
-<li>解析：在程序执行过程中，函数调用完成后，返回值通常存放在EAX寄存器中。例如，在一个简单的加法函数 int add(int a, int b) 中， return a + b; 语句的结果会存放在EAX中。<br>2. AX、AH、AL</li>
-<li>描述：AX是EAX的低16位，AH是AX的高8位，AL是AX的低8位。</li>
-<li>解析：这是对EAX寄存器进行位拆分的方式。例如，在处理16位数据时，可以使用AX；在处理8位数据时，可以使用AH或AL。这种位拆分在汇编编程中很常见。<br>3. EBX</li>
-<li>描述：32位。</li>
-<li>解析：EBX通常用于存储数据的基地址。例如，在访问数组时，可以将数组的起始地址存放在EBX中，然后通过偏移量来访问数组元素。<br>4. ECX</li>
-<li>描述：32位，用于循环次数，常与 this 指针相关。</li>
-<li>解析：在循环操作中，ECX常用来存放循环的次数。例如，在一个 for 循环 for(int i &#x3D; 0; i &lt; n; i++) 中， n 的值可能会存放在ECX中。 this 指针在面向对象编程中指向当前对象，在某些情况下可能会与ECX寄存器相关。<br>5. EDX</li>
-<li>描述：32位。</li>
-<li>解析：EDX常与EAX一起使用，用于存放乘法和除法操作的结果。例如，在进行32位乘法操作时，结果的高32位存放在EDX中，低32位存放在EAX中。<br>6. EBP、ESP</li>
-<li>描述：EBP是32位栈底寄存器，ESP是32位栈顶寄存器。</li>
-<li>解析：在函数调用过程中，栈用于存储局部变量、参数和返回地址。EBP指向栈底，ESP指向栈顶。当函数被调用时，ESP会根据需要调整栈顶位置，而EBP保持不变，以便访问函数的局部变量。<br>7. ESI、EDI</li>
-<li>描述：ESI是源索引寄存器，EDI是目标索引寄存器。</li>
-<li>解析：在字符串操作和数据块移动操作中，ESI用于指向源数据的地址，EDI用于指向目标数据的地址。例如，在执行 memcpy 函数时，ESI指向源内存块，EDI指向目标内存块。</li>
-</ul>
-<h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><p>段寄存器是计算机处理器中用于存储段基址的寄存器</p>
-<p>一、实模式下的段寄存器</p>
-<p>1. CS（代码段寄存器）</p>
-<ul>
-<li>用途：存放当前正在执行的代码段的基址。</li>
-<li>计算方式：物理地址 &#x3D; CS × 16 + IP（指令指针）。</li>
-<li>示例：如果CS &#x3D; 0x1000，IP &#x3D; 0x0100，那么物理地址 &#x3D; 0x1000 × 16 + 0x0100 &#x3D; 0x10100。<br>2. DS（数据段寄存器）</li>
-<li>用途：存放当前数据段的基址，用于访问数据。</li>
-<li>计算方式：物理地址 &#x3D; DS × 16 + 偏移量。</li>
-<li>示例：如果DS &#x3D; 0x2000，偏移量 &#x3D; 0x0200，那么物理地址 &#x3D; 0x2000 × 16 + 0x0200 &#x3D; 0x20200。<br>3. SS（堆栈段寄存器）</li>
-<li>用途：存放当前堆栈段的基址，用于管理堆栈操作。</li>
-<li>计算方式：物理地址 &#x3D; SS × 16 + SP（堆栈指针）。</li>
-<li>示例：如果SS &#x3D; 0x3000，SP &#x3D; 0x0300，那么物理地址 &#x3D; 0x3000 × 16 + 0x0300 &#x3D; 0x30300。<br>4. ES（附加段寄存器）</li>
-<li>用途：存放附加数据段的基址，常用于字符串操作等。</li>
-<li>计算方式：物理地址 &#x3D; ES × 16 + 偏移量。</li>
-<li>示例：如果ES &#x3D; 0x4000，偏移量 &#x3D; 0x0400，那么物理地址 &#x3D; 0x4000 × 16 + 0x0400 &#x3D; 0x40400。</li>
-</ul>
-<p>二、保护模式下的段寄存器</p>
-<p>1. CS、DS、SS、ES</p>
-<ul>
-<li>用途：在保护模式下，这些段寄存器不再直接存储段基址，而是存储段选择子。段选择子用于从全局描述符表（GDT）或局部描述符表（LDT）中获取段描述符，段描述符中包含段基址、段界限和访问权限等信息。</li>
-<li>示例：当执行一条指令时，处理器会根据CS中的段选择子从GDT或LDT中获取对应的段描述符，然后根据段描述符中的段基址和指令指针（EIP）来计算出线性地址（在启用分页机制时，线性地址还需转换为物理地址）。</li>
-</ul>
-<h3 id="指令指针寄存器"><a href="#指令指针寄存器" class="headerlink" title="指令指针寄存器"></a>指令指针寄存器</h3><p>1. 实模式下（16位环境）</p>
-<ul>
-<li><p>名称：IP（Instruction Pointer）</p>
-</li>
-<li><p>用途：</p>
-</li>
-<li><p>IP寄存器用于存放当前正在执行的指令相对于代码段（CS）基地址的偏移量。它与CS寄存器一起确定下一条要执行的指令的物理地址。</p>
-</li>
-<li><p>物理地址的计算公式为：物理地址 &#x3D; CS × 16 + IP。</p>
-</li>
-<li><p>特点：</p>
-</li>
-<li><p>IP是16位寄存器，其值在程序执行过程中由处理器自动更新。每次执行完一条指令，IP的值会根据指令的长度增加，指向下一条指令。</p>
-</li>
-<li><p>程序员不能直接对IP进行赋值操作，但可以通过某些指令（如跳转指令）间接改变IP的值。<br>2. 保护模式下（32位环境）</p>
-</li>
-<li><p>名称：EIP（Extended Instruction Pointer）</p>
-</li>
-<li><p>用途：</p>
-</li>
-<li><p>EIP寄存器的功能与IP类似，但它是32位的，用于存放32位指令的偏移量。在保护模式下，它与CS段选择子一起确定下一条要执行的指令的线性地址（在启用分页机制时，线性地址会进一步转换为物理地址）。</p>
-</li>
-<li><p>线性地址的计算公式为：线性地址 &#x3D; 段基址（从GDT或LDT中获取） + EIP。</p>
-</li>
-<li><p>特点：</p>
-</li>
-<li><p>EIP同样由处理器自动更新。在程序执行过程中，如遇到跳转、调用、返回等指令时，EIP的值会相应改变。</p>
-</li>
-<li><p>与实模式下的IP一样，程序员不能直接对EIP进行赋值操作，但可以通过控制转移指令来改变EIP的值。<br>3. 64位环境下</p>
-</li>
-<li><p>名称：RIP（Relative Instruction Pointer）</p>
-</li>
-<li><p>用途：</p>
-</li>
-<li><p>RIP是64位寄存器，用于存放64位指令的偏移量。它与CS段选择子一起确定下一条要执行的指令的线性地址（在启用分页机制时，线性地址会进一步转换为物理地址）。</p>
-</li>
-<li><p>线性地址的计算公式与32位类似：线性地址 &#x3D; 段基址（从GDT或LDT中获取） + RIP。</p>
-</li>
-<li><p>特点：</p>
-</li>
-<li><p>RIP由处理器自动更新。在现代64位处理器中，指令预取、分支预测等机制都与RIP密切相关。</p>
-</li>
-<li><p>程序员不能直接对RIP进行赋值操作，只能通过特定的指令（如相对跳转指令）间接改变RIP的值。</p>
-</li>
-</ul>
-<h3 id="状态寄存器"><a href="#状态寄存器" class="headerlink" title="状态寄存器"></a>状态寄存器</h3><p>状态寄存器（Status Register），也称为标志寄存器（Flag<br>Register），是计算机中的一种特殊寄存器。状态寄存器用于保存关于计算机状态和执行结果的信息，通常由一组二进制位组成，每个位都对应一个特定的状态标志。</p>
-<p>在x86架构中，状态寄存器通常由一些标志位组成，其中包括：</p>
-<ul>
-<li>零标志位（Zero Flag，ZF）：指示最近的运算结果是否为零。如果运算结果为零，则ZF被置为1，否则为0。</li>
-<li>进位标志位（Carry Flag，CF）：用于处理进位和借位操作。如果最近的运算产生了进位（或借位），CF被置为1，否则为0。</li>
-<li>溢出标志位（Overflow Flag，OF）：用于检测运算结果是否溢出。如果最近的运算结果造成了溢出，OF标志被置为1，否则为0。</li>
-<li>符号标志位（Sign Flag，SF）：指示最近的运算结果的符号。如果结果为负数，则SF被置为1，否则为0。</li>
-<li>奇偶标志位（Parity Flag，PF）：指示最近的运算结果中设置了偶数个位的数量。如果结果中偶数个位被设置为1，则PF被置为1，否则为0。</li>
-<li>调整标志位（Adjust Flag，AF）：在二进制代码运算中用于处理BCD码（二进制编码的十进制数）。在一般的计算中不常使用。<br>除了上述标志位外，不同架构和处理器还可能存在其他特定的标志位。</li>
-</ul>
-<p>状态寄存器广泛用于控制和判断程序的执行流程，以及进行条件分支和循环控制。通过检查和设置状态寄存器中的标志位，程序可以根据运算结果和条件进行相应的操作。</p>
-<h4 id="JCC指令"><a href="#JCC指令" class="headerlink" title="JCC指令"></a>JCC指令</h4><p>指令	        条件<br>JZ     	    等于（ZF&#x3D;1）<br>JE	            等于（ZF&#x3D;1）<br>JNZ	       不等于（ZF&#x3D;0）<br>JNE	       不等于（ZF&#x3D;0）<br>JA	       无符号大于（CF&#x3D;0且ZF&#x3D;0）<br>JNBE	   无符号大于（CF&#x3D;0且ZF&#x3D;0）<br>JAE	      无符号大于等于（CF&#x3D;0）<br>JNB	      无符号大于等于（CF&#x3D;0）<br>JNC	       无符号大于等于（CF&#x3D;0）<br>JB	           无符号小于（CF&#x3D;1）<br>JNAE	  无符号小于（CF&#x3D;1）<br>JBE	      无符号小于等于（CF&#x3D;1或ZF&#x3D;1）<br>JNA	     无符号小于等于（CF&#x3D;1或ZF&#x3D;1）<br>JCXZ	 CX&#x2F;ECX为零<br>JECXZ	 ECX为零<br>JG	     有符号大于（ZF&#x3D;0且SF&#x3D;OF）<br>JNLE	 有符号大于（ZF&#x3D;0且SF&#x3D;OF）<br>JGE	     有符号大于等于（SF&#x3D;OF）<br>JNL	     有符号大于等于（SF&#x3D;OF）<br>JL	         有符号小于（SF≠OF）<br>JNGE	 有符号小于（SF≠OF）<br>JLE	     有符号小于等于（ZF&#x3D;1或SF≠OF）<br>JNG	     有符号小于等于（ZF&#x3D;1或SF≠OF）<br>JO	     溢出（OF&#x3D;1）<br>JNO	    未溢出（OF&#x3D;0）<br>JS	       负数 （SF&#x3D;1）<br>JNS	   非负数（SF&#x3D;0）</p>
-<h4 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h4><p>分类                        	示例指令	                             功能<br>数据传输指令	           MOV	                         从一个位置复制数据到另一个位置<br>                 PUSH	                       将数据推入堆栈<br>                 POP	                           将数据从堆栈弹出<br>                 XCHG	                       交换两个位置的数据<br>                 LEA	                           加载地址<br>                 MOVS	                       将一个字符串的数据复制到另一个字符串<br>                 LODS	                        将数据从一个位置加载到累加器<br>                 STOS	                        将累加器中的数据存储到一个位置<br>算术和逻辑指令     	  ADD                         	将两个数相加<br>                 SUB	                           从一个数中减去另一个数<br>                 MUL	                       执行无符号乘法<br>                 DIV	                           执行无符号除法<br>                AND	                        执行逻辑与操作<br>                OR	                            执行逻辑或操作<br>                XOR	                            执行异或操作<br>                NOT	                            执行逻辑非操作<br>控制流指令	            JMP	                            无条件跳转到指定地址<br>                Jcc	                           条件跳转指令，根据标志位执行跳转<br>                CALL	                       调用子程序或函数<br>                RET	                            返回子程序或函数调用点<br>                INT	                           触发中断服务例程<br>                LOOP	                       根据计数器值循环执行指令<br>                HLT	                           暂停处理器运行<br>状态标志位指令	    CMP	                        比较两个数<br>                TEST	                       按位进行与操作并更新标志位<br>                CLC	                           清除进位标志位<br>                STC	                           设置进位标志位<br>                CMC	                       取反进位标志位<br>                CLD	                           清除方向标志位<br>                STD	                           设置方向标志位<br>字符串和循环指令	MOVS	                       将一个字符串的数据复制到另一个字符串<br>                CMPS	                       比较两个字符串的数据<br>                SCAS	                      在字符串中搜索指定的数据<br>                REP	                           重复执行指令块<br>                REPE&#x2F;REPZ	               如果相等则重复执行指令块<br>                REPNE&#x2F;REPNZ         	如果不相等则重复执行指令块<br>堆栈指令	                PUSH	                        将数据推入堆栈<br>                POP	                           将数据从堆栈弹出<br>                PUSHAD	                   将所有通用寄存器的值推入堆栈<br>                POPAD	                   将所有通用寄存器的值从堆栈弹出<br>                PUSHA	                       将通用寄存器的值推入堆栈<br>                POPA	                       将通用寄存器的值从堆栈弹出<br>过程和函数指令	     CALL	                        调用子程序或函数<br>                RET	                           返回子程序或函数调用点<br>                ENTER                     	建立堆栈帧<br>                LEAVE                      	恢复调用者的堆栈帧<br>                PROC	                       定义一个过程<br>                ENDP	                       定义过程结束<br>I&#x2F;O指令	                 IN	                            从指定端口读取数据<br>                OUT	                          将数据写入指定端口<br>                INS	                           从数据端口读取数据到字符串<br>                OUTS	                      将字符串的数据写入到数据端口<br>                CLI	                          关中断<br>                STI	                          开中断</p>
-<h3 id="REP前缀的概念"><a href="#REP前缀的概念" class="headerlink" title="REP前缀的概念"></a>REP前缀的概念</h3><ul>
-<li>“rep”指令前缀表示重复执行某项操作。例如，“stos”是一条可单独执行的指令，表示存储字节到目标地址。“rep stos”表示重复执行“stos”指令，直到“ecx”为0。</li>
-<li>类似的指令还有“rep lods”、“rep movs”等。</li>
-</ul>
-<h4 id="REP-STOS的实际操作"><a href="#REP-STOS的实际操作" class="headerlink" title="REP STOS的实际操作"></a>REP STOS的实际操作</h4><ul>
-<li>使用ecx作为计数器：“rep”指令前缀使用“ecx”作为计数器，表示重复执行“stos”指令的次数。每次执行时，“ecx”都会递减，当“ecx”为0时，结束重复执行。每次存储一个字节或一个双字。</li>
-<li>存储值到目标地址：“rep stos”表示存储“al”或“eax”的值到“edi”指向的目标地址。</li>
-<li>edi值的自增：每次存储一个字节或一个双字后，“edi”的值自增，指令的执行结果为存储到连续的内存空间。</li>
-<li> 启动设置<br> 设置“edi”为存储的起始目标地址。<br> 设置“eax”或“al”为被存储的值。<br> 设置“ecx”为执行次数。</li>
-</ul>
-<h4 id="REP-MOVS操作原理"><a href="#REP-MOVS操作原理" class="headerlink" title="REP MOVS操作原理"></a>REP MOVS操作原理</h4><ul>
-<li>与REP STOS类似：“REP MOVS”与“REP STOS”指令类似，重复执行“movs”指令多次，直到“ecx”的值为0。</li>
-<li>实际操作：<br>1. 每次移动一个字节或一个双字，从[esi]地址的字符移动到[edi]内存中。<br>2. 每次执行“movs”操作后，“esi”和“edi”的值都会被增加。<br>3. 启动设置</li>
-<li>设置“edi”为存储的起始目标地址。</li>
-<li>设置“esi”为存储的起始源地址。</li>
-<li>设置“ecx”为执行次数。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/30/x86/" data-id="cm8vg7hk40000d8v613s87k6u" data-title="x86" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -971,6 +1039,10 @@ return 0;
       <ul>
         
           <li>
+            <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/">编码解码</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">UPX脱壳</a>
           </li>
         
@@ -984,10 +1056,6 @@ return 0;
         
           <li>
             <a href="/2025/03/30/PTF/">PTF</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/">MISC-隐写</a>
           </li>
         
       </ul>

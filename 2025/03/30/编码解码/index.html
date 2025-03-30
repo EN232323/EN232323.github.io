@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>编码解码 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="古典密码很少使用，其大部分加密方式都是利用 替换式密码 或 移项式密码，有时则是两者的混合。通常来说需要对算法和密钥保密。 凯撒密码 它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。如:明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ 密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC 解密方法：解密的人根据事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编码解码">
+<meta property="og:url" content="http://example.com/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="古典密码很少使用，其大部分加密方式都是利用 替换式密码 或 移项式密码，有时则是两者的混合。通常来说需要对算法和密钥保密。 凯撒密码 它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。如:明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ 密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC 解密方法：解密的人根据事">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1228809/202002/1228809-20200228202249268-1484724482.png">
+<meta property="og:image" content="https://bkimg.cdn.bcebos.com/pic/f9dcd100baa1cd118c10fccdb512c8fcc2ce2dbd?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/36de2d3f0e8599fd7e6050253f78b677.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200107094249344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MTQxODY1,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/12bd0efeafa5431ea699385774f3824c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU2hlbm5vdGVy5Ly4,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/66bd667670e8b6db26c01982256cdf5c.png">
+<meta property="article:published_time" content="2025-03-30T09:51:37.000Z">
+<meta property="article:modified_time" content="2025-03-30T09:51:53.550Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1228809/202002/1228809-20200228202249268-1484724482.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-编码解码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:51:37.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      编码解码
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h2><p>很少使用，其大部分加密方式都是利用 <strong>替换式密码</strong> 或 <strong>移项式密码</strong>，有时则是两者的混合。<br>通常来说需要对<strong>算法和密钥保密</strong>。</p>
+<h3 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h3><ul>
+<li>它是一种<strong>替换加密</strong>的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。<br>如:明文字母表：ABCDEFGHIJKLMNOPQRSTUVWXYZ<br> 密文字母表：DEFGHIJKLMNOPQRSTUVWXYZABC</li>
+<li>解密方法：解密的人根据事先已知的密钥反过来操作，得到原来的明文。</li>
+</ul>
+<h3 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h3><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><ul>
+<li>是由一些偏移量不同的恺撒密码组成。</li>
+<li>为了生成密码，需要使用<strong>表格法</strong>。</li>
+<li>&#x3D;&#x3D;<strong>密钥准备</strong>‌&#x3D;&#x3D;：密钥长度需要与明文长度相同。如果密钥长度少于明文长度，则重复拼接密钥直到与明文长度相同。</li>
+<li>&#x3D;&#x3D;‌<strong>加密过程</strong>‌&#x3D;&#x3D;：根据明文和密钥的对应字母，在维吉尼亚密码表格中找到相交点。（例如，明文第一个字母是“I”，密钥第一个字母是“o”，在表格中找到“I”列与“o”行相交点，该点对应的字母“W”即为密文第一个字母。）同理，对明文和密钥的后续字母进行相同的操作，得到完整的密文。</li>
+<li>维吉尼亚密码只对字母进行加密，密文与明文的字母大小写保持一致。</li>
+<li>若文本中出现非字母字符，会原样保留。</li>
+<li>如果输入多行文本，每行是单独加密的。</li>
+</ul>
+<h4 id="对照表"><a href="#对照表" class="headerlink" title="对照表"></a>对照表</h4><p><img src="https://img2018.cnblogs.com/blog/1228809/202002/1228809-20200228202249268-1484724482.png"></p>
+<h4 id="例如"><a href="#例如" class="headerlink" title="例如"></a>例如</h4><p>明文：HEETIAN</p>
+<p>  密钥：LABLABL</p>
+<p>  密文：SEFEIBY</p>
+<h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><h4 id="介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A-小写代表B，正体代表A-斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）"><a href="#介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A-小写代表B，正体代表A-斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）" class="headerlink" title="介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A&#x2F;小写代表B，正体代表A&#x2F;斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章完全无关。）"></a>介绍培根密码的本质是将字母用一串二进制数替换，但是表示的过程中，没有采取0和1的形式，而使用a和b来代替。加密的过程首先将要加密的内容根据加密表里的内容进行替换，如a用AAAAA替换，b用AAAAB替换。替换完之后，我们可以把A和B当作两个不同的特征（如大写代表A&#x2F;小写代表B，正体代表A&#x2F;斜体代表B）带入到一个无关的句子中，这就得到了我们加密后的结果。（其本质上是将二进制信息通过样式的区别，加在了正常书写之上，培根密码所包含的信息可以和用于承载其的文章<strong>完全无关</strong>。）</h4><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p><img src="https://bkimg.cdn.bcebos.com/pic/f9dcd100baa1cd118c10fccdb512c8fcc2ce2dbd?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080"></p>
+<h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码属于古典密码中最经典的<strong>移项式密码</strong>，同之前讲到的凯撒密码等替换式密码代表了密码学中最重要的两个概念</p>
+<p>以栏栅栏密码为例来讲解它的加密和解密过程。</p>
+<p>  加密过程：</p>
+<pre><code>    明文：THERE_IS_A_CIPHER_
+
+    两个一组，得到：(TH) (ER) (E_) (IS) (_A) (_C) (IP) (HE) (R_)
+
+    先每组中取出第一个字母：TEEI__IHR
+
+    再从每组中取出第二个字母：HR_SACPE_
+
+    连在一起得到密文：TEEI__IHRHR_SACPE_
+    
+    解密过程：
+
+    而解密的时候，先把密文从中间分开，变为两行：
+
+    TEEI__IHR
+
+    HR_SACPE_
+
+    再按上下上下的顺序组合起来：
+
+    THERE_IS_A_CIPHER_
+</code></pre>
+<p>栅栏密码的分栏的一个前提就是分的栏数需是明文长度的因数，这样才会使得分出来的每个栏长度都一样。</p>
+<p>  对于多栏，我们还是用上面的例子来讲解。</p>
+<p>  上面的明文字符串（THERE_IS_A_CIPHER_）的长度是18    </p>
+<p>  所以我们可以把它分为2，3，4，6，9栏，这里我们以6栏为例。</p>
+<p>  以每个元素相隔6个字符分割出栅栏。</p>
+<pre><code>    第一栏：TII
+
+    第二栏：HSP
+
+    第三栏：E_H
+
+    第四栏：RAE
+
+    第五栏：E_R
+
+    第六栏：_C_
+</code></pre>
+<p>  连接在一起得到密文：TIIHSPE_HRAEE_R_C_</p>
+<h3 id="希尔密码"><a href="#希尔密码" class="headerlink" title="希尔密码"></a>希尔密码</h3><p>希尔密码是运用基本矩阵论原理的替换密码</p>
+<h3 id="Ascll表"><a href="#Ascll表" class="headerlink" title="Ascll表"></a>Ascll表</h3><p><img src="https://i-blog.csdnimg.cn/blog_migrate/36de2d3f0e8599fd7e6050253f78b677.png"></p>
+<h3 id="base-16"><a href="#base-16" class="headerlink" title="base 16"></a>base 16</h3><p>1.使用<strong>16个ASCII可打印字符</strong>（数字0-9和字母A-F），对任意字节数据进行编码。称 HEX (十六进制)，是不区分大小写的十六进制编码标准</p>
+<p>2.先获取输入字符串每个字节的二进制值（不足8比特在高位补0），然后将其串联进来，再按照4比特一组进行切分，将每组二进制数分别转换成十进制。</p>
+<p>　 3.Base16编码后的数据量是原数据的两倍：1000比特数据需要250个字符（即 250*8&#x3D;2000 比特）。</p>
+<p><strong>流程</strong>：给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再转化为16进制</p>
+<p><strong>注</strong>：可以看到8比特数据按照4比特切分刚好是两组，所以Base16不可能用到填充符号“&#x3D;”。</p>
+<p><strong>例：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>H</th>
+<th>e</th>
+<th>l</th>
+<th>l</th>
+<th>o</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ascll</td>
+<td>72</td>
+<td>101</td>
+<td>108</td>
+<td>108</td>
+<td>111</td>
+<td></td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>01001000</td>
+<td>01100101</td>
+<td>01101100</td>
+<td>01101100</td>
+<td>01101111</td>
+<td></td>
+</tr>
+<tr>
+<td>重新划分</td>
+<td>0100    1000</td>
+<td>0110  0101</td>
+<td>0110  1100</td>
+<td>0110  1100</td>
+<td>0110  1111</td>
+<td></td>
+</tr>
+<tr>
+<td>编码后</td>
+<td>4        8</td>
+<td>6       5</td>
+<td>6      C</td>
+<td>6       C</td>
+<td>6        F</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="base32"><a href="#base32" class="headerlink" title="base32"></a>base32</h3><p> <strong>1</strong>.Base32编码是使用**32个可打印字符（字母A-Z和数字2-7）**对任意字节数据进行编码的方案，编码后的字符串不用区分大小写并排除了容易混淆的字符，可以方便地由人类使用并由计算机处理。(1和L区分)</p>
+<p> <strong>2</strong>.Base32主要用于编码二进制数据，但是Base32也能够编码诸如ASCII之类的二进制文本。</p>
+<p><strong>3</strong>.Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，<strong>按照5比特一组进行切分</strong>，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。</p>
+<p>由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是<strong>40比特的倍数（5和8的最小公倍数）</strong>。</p>
+<p><strong>流程</strong>：给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再根据码表转换</p>
+<p><strong>重新划分</strong>：划分时最后不够5的后面先补0，总体不够<strong>40比特的倍数</strong>的补等号（一个等号就是5bit）</p>
+<p><strong>例：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">C</th>
+<th align="center">t</th>
+<th align="center">f</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ascll</td>
+<td align="center">67</td>
+<td align="center">116</td>
+<td align="center">102</td>
+</tr>
+<tr>
+<td align="center">二进制</td>
+<td align="center">01000011</td>
+<td align="center">01110100</td>
+<td align="center">01100110</td>
+</tr>
+<tr>
+<td align="center">Ctf–&gt;IN2GM&#x3D;&#x3D;&#x3D;</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>码表</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><img src="https://img-blog.csdnimg.cn/20200107094249344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MTQxODY1,size_16,color_FFFFFF,t_70"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="base-64"><a href="#base-64" class="headerlink" title="base 64"></a>base 64</h3><p>Base64是一种基于64个可打印字符来表示二进制数据的表示方法。由于，所以每6个比特为一个单元，对应某个可打印字符。3个字节有24个比特，对应于4个Base64单元，即3个字节可由4个可打印字符来表示。</p>
+<p>   由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base64按6比特切分的二进制数据必须是24<strong>比特的倍数（8和6的最小公倍数）</strong>。</p>
+<p>**流程：**给定的字符串根据Ascll标转化成二进制–&gt;重新划分–&gt;再根据码表转换</p>
+<p><strong>重新划分：<strong>划分时最后不够6的后面先补0，总体不够24</strong>比特的倍数</strong>的补等号（一个等号就是6bit）<br>码表<br>  <img src="https://img-blog.csdnimg.cn/12bd0efeafa5431ea699385774f3824c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU2hlbm5vdGVy5Ly4,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p>
+<h3 id="base16-base32-base64的区分"><a href="#base16-base32-base64的区分" class="headerlink" title="base16,base32,base64的区分"></a>base16,base32,base64的区分</h3><ul>
+<li>base16:   范围是数字（0-9），字母（ABCDE）</li>
+<li>base32：只有大写字母（A-Z）和数字234567</li>
+<li>base64:  就是包括小写字母a-z、大写字母A-Z、数字0-9、符号”+”、”&#x2F;“一共64个字符的字符集，（任何符号都可以转换成这个字符集中的字符，这个转换过程就叫做base64编码。）</li>
+</ul>
+<h3 id="base58"><a href="#base58" class="headerlink" title="base58"></a>base58</h3><h5 id="字符表"><a href="#字符表" class="headerlink" title="字符表"></a>字符表</h5><p><strong>Base58字符表包括以下字符</strong>‌：</p>
+<ul>
+<li>码表：<br> <img src="https://i-blog.csdnimg.cn/blog_migrate/66bd667670e8b6db26c01982256cdf5c.png"></li>
+<li>数字：1, 2, 3, 4, 5, 6, 7, 8, 9</li>
+<li>大写字母：A, B, C, D, E, F, G, H, J, K, M, N, P, Q, R, S, T, U, V, W, X, Y, Z</li>
+<li>小写字母：a, b, c, d, e, f, g, h, i, j, k, m, n, o, p, q, r, s, t, u, v, w, x, y, z</li>
+</ul>
+<p>‌<strong>Base58字符表不包括以下字符</strong>‌：</p>
+<ul>
+<li>数字0（零）</li>
+<li>大写字母O（大写字母O）</li>
+<li>小写字母l（小写字母L）</li>
+<li>大写字母I（大写字母I）</li>
+<li>加号（+）</li>
+<li>斜杠（&#x2F;）</li>
+</ul>
+<h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><ol>
+<li><strong>将输入数据转换为整数</strong>：<ul>
+<li>将要编码的数据（通常是二进制数据）视为一个大整数。</li>
+</ul>
+</li>
+<li><strong>进行整数除法</strong>：<ul>
+<li>将该整数连续除以 58，并记录余数。</li>
+<li>余数将用于查找 Base58 字符集中的相应字符。</li>
+</ul>
+</li>
+<li><strong>构建结果字符串</strong>：<ul>
+<li>继续将整数除以 58，直到结果为 0。</li>
+<li>余数对应的字符按相反顺序（从最后一个余数开始）组合成结果字符串。</li>
+</ul>
+</li>
+<li><strong>处理前导零</strong>：<ul>
+<li>在输入数据中，如果有前导零，每个前导零会在结果字符串中增加一个字符 <code>&#39;1&#39;</code>。这样可以保留原始数据中的零信息。</li>
+</ul>
+</li>
+</ol>
+<h5 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h5><ol>
+<li><strong>将 Base58 字符串转换为整数</strong>：<ul>
+<li>通过将每个字符转换为相应的整数值，并用 58 的幂进行加权，计算出对应的大整数。</li>
+</ul>
+</li>
+<li><strong>将整数转换为字节</strong>：<ul>
+<li>将得到的大整数转换回原始的字节数组。</li>
+</ul>
+</li>
+<li><strong>处理前导 ‘1’</strong>：<ul>
+<li>在解码时，如果结果字符串中有前导 <code>&#39;1&#39;</code>，则在字节数组的开头添加相应数量的零字节。</li>
+</ul>
+</li>
+</ol>
+<h3 id="base-85"><a href="#base-85" class="headerlink" title="base 85"></a>base 85</h3><p>0-9  A-Z a-z !#$%&amp;()*+-;&lt;&gt;&#x3D;?@^ __’{}|~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" data-id="cm8vgo35y00000kv63wks9ka7" data-title="编码解码" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">UPX脱壳</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/30/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/">编码解码</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">UPX脱壳</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/retlibc1/">retlibc1</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/PTF/">PTF</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
