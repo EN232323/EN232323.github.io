@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>MISC-隐写 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="原理：把秘密隐藏到普通的信息中，但是目前的隐写术是将某些秘密信息隐藏于数字媒介中，而又不损害载体原来信息的表达，从而掩盖秘密信息。常见的隐写载体包括文本，图像，音频，视频等。比赛中主要考察两点：隐写方法的识别和信息提取。 图像隐写常见的分为：插入隐写和替换隐写 插入隐写 指利用文件格式的冗余性，在不影响文件的正常使用从而隐藏信息，这种方法会导致文件的大小发生变化，隐藏信息可能被插入到末尾（追加插入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MISC-隐写">
+<meta property="og:url" content="http://example.com/2025/03/30/MISC-%E9%9A%90%E5%86%99/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原理：把秘密隐藏到普通的信息中，但是目前的隐写术是将某些秘密信息隐藏于数字媒介中，而又不损害载体原来信息的表达，从而掩盖秘密信息。常见的隐写载体包括文本，图像，音频，视频等。比赛中主要考察两点：隐写方法的识别和信息提取。 图像隐写常见的分为：插入隐写和替换隐写 插入隐写 指利用文件格式的冗余性，在不影响文件的正常使用从而隐藏信息，这种方法会导致文件的大小发生变化，隐藏信息可能被插入到末尾（追加插入">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image013.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg">
+<meta property="og:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg">
+<meta property="article:published_time" content="2025-03-30T09:46:38.000Z">
+<meta property="article:modified_time" content="2025-03-30T09:47:10.693Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-MISC-隐写" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:46:38.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MISC-隐写
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>把秘密隐藏到普通的信息中，但是目前的隐写术是将某些秘密信息隐藏于数字媒介中，而又不损害载体原来信息的表达，从而掩盖秘密信息。常见的隐写载体包括文本，图像，音频，视频等。比赛中主要考察两点：隐写方法的识别和信息提取。</p>
+<h3 id="图像隐写"><a href="#图像隐写" class="headerlink" title="图像隐写"></a>图像隐写</h3><p>常见的分为：插入隐写和替换隐写</p>
+<h4 id="插入隐写"><a href="#插入隐写" class="headerlink" title="插入隐写"></a>插入隐写</h4><p> 指利用文件格式的冗余性，在不影响文件的正常使用从而隐藏信息，这种方法会导致文件的大小发生变化，隐藏信息可能被插入到末尾（追加插入法）或者开头（前置插入法）</p>
+<h5 id="追加插入法"><a href="#追加插入法" class="headerlink" title="追加插入法"></a>追加插入法</h5><p>windows会根据后缀名解析文件，文件结束标志后得数据不会被解析，对于linux系统而言，区别是根据文件头识别类型而不是给文件尾部。</p>
+<h5 id="前置插入法"><a href="#前置插入法" class="headerlink" title="前置插入法"></a>前置插入法</h5><p>将数据插入到文件按头部的冗余部分，有一些文件在设计时会保留一块数据区作为批注信息。</p>
+<h5 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h5><p>指文件的属性，比如：大小，数据类型，拥有者等等，可能隐藏信息。</p>
+<h4 id="替换隐写（常考）"><a href="#替换隐写（常考）" class="headerlink" title="替换隐写（常考）"></a>替换隐写（常考）</h4><p>将几乎不影响文件内容的数据进行修改，达到隐藏信息的目的，最常见的是最低比特位隐写（LSB隐写）。因为有损压缩会损毁修改掉的微小信息。</p>
+<h5 id="LSB（最不显著位）隐写"><a href="#LSB（最不显著位）隐写" class="headerlink" title="LSB（最不显著位）隐写"></a>LSB（最不显著位）隐写</h5><ul>
+<li>在图像中，每一个通道由8比特构成，像素值在0~255之间，在单通道图像中，通过不同的黑白比例达到不同的灰度。</li>
+<li>三通道图像中（RGB），每个通道代表红，绿，蓝（利用三种颜色通道的最后一位隐藏信息,)，在RGBA图像中，多出一个透明度通道。因为二进制数据的最后一位大小改变的影响很小，就可以在这里替换数据。更高级的LSB隐写-PLTE块隐写。</li>
+<li><strong>隐写方式</strong>：每一个色素都由RGB（红绿蓝）三种颜色组成，每种颜色的占比不同，所调出来的颜色不同。红218（11011010），绿150（10010110），红（10010101），假如改变每种颜色二进制数字的最后一位，对于整体的颜色改变， 肉眼并不能观察出来，从而达到隐藏信息的目的。</li>
+<li>左右选择不同的色彩通道，可以查看不同通道下的图片，出题人可能在某个通道里面加入一个二维码之类的<br> 例题讲解</li>
+</ul>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"></p>
+<p>把图片放到stegsolve中，然后dataextract，然后勾选LSB，再把RGB最低位勾选出来，然后预览（preview），右边那一大堆是实体编码，把多于元素去掉之后，把它转换为16进制</p>
+<p>例题二：</p>
+<p>按照上述步骤操作之后，得到</p>
+<p>![[Pasted image 20241027220206.png]]</p>
+<p>只有6个字母，联想到16进制，将zwxyv映射到abcde，解码得到flag。</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png"></p>
+<p>所有的数字只有两种类型，0和255，那么不是白色就是黑色，一共有160000个数据，那么我们可以联想到400*400的一个二维码图片<br>执行右边的脚本即可得到图片。</p>
+<h5 id="PNG图片（无损压缩"><a href="#PNG图片（无损压缩" class="headerlink" title="PNG图片（无损压缩)"></a>PNG图片（无损压缩)</h5><ul>
+<li><p>我们之所以能看到图片，就是因为图片查看器将图片所对应的二进制字节流按照它的解释规则将图片转换为色素块，很多色素块拼成了图片，因此，分析一个图片通常是查看它的原始二进制字节流。</p>
+</li>
+<li><p>使用010editor （文件结构查看工具）来获得图片的16进制参数。</p>
+</li>
+<li><p>一个PNG图片的数据可以分为多个数据块。</p>
+</li>
+<li><p>PNG图片文件头的16进制表示：89 50 4E 47</p>
+</li>
+<li><p>IHDR数据块：文件头数据块，通常包含图片的高度和宽度等基本属性，可以通过将crc还原出来所对应的高度和宽度来找到flag。<br><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png"></p>
+<p>在IHDR数据块中找到ihdr，在这里有图片的高度和宽度信息，假如一个图片的高度为200，但是出题人修改高度为150，那么我们在拿到这个题目进行查看时，只能看到150高度的信息，出题人可能将信息隐藏到另外50高度里面，那么我们就可以通过分析IHDR数据块的crc，从而不断的更改高度直到某个高度所对应的crc和分析所得到的crc一样，那么就得到了正确高度，从而得到隐藏信息</p>
+</li>
+<li><p>cHRM数据块。</p>
+</li>
+<li><p>IDAT数据块（多个）（包含图片内容）：包含了数据的构成参数。如果该数据块有问题，有一种题型是在该数据块中存有压缩包，通过Zlib工具解压缩查看内容。</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image007.png"> <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image010.png"></p>
+<p> 上面已经提到，IDAT数据块包含了PNG图片的内容，有多个IDAT数据块。<br><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image013.png"></p>
+<p>每一个IDAT数据块都包含了多个字节流，前面已经说过，图片是由字节流组成的。<br><strong>考察点（crc校验）</strong>：<br>每个数据块都含有一个不同的crc参数，可以通过题目图片的crc与自己通过工具将数据块分析出来的crc是否相同来判断该数据块是否有问题。（PNGcheck工具来分析数据块的crc）。可以把crc理解为数据块的“身份证”<br> <strong>实际出题格式之一</strong>：<br>可能在问题数据块中压缩隐藏文件，那么我们就把数据块提取出来，解压缩分析</p>
+</li>
+<li><p>IEAD数据块：图片结束标志。</p>
+</li>
+</ul>
+<h5 id="JPG图片（有损或无损）"><a href="#JPG图片（有损或无损）" class="headerlink" title="JPG图片（有损或无损）"></a>JPG图片（有损或无损）</h5><ul>
+<li>由一个一个段组成</li>
+<li>文件头识别：FFD8</li>
+</ul>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png"></p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg"></p>
+<p>常用工具：silenteye，steghide，stegsolve</p>
+<h5 id="GIF（无损）"><a href="#GIF（无损）" class="headerlink" title="GIF（无损）"></a>GIF（无损）</h5><ul>
+<li>文件头：GIF89a&#x2F;GIF87a（都是可打印字符），文件伪装很方便，只需开头就是GIF89a&#x2F;GIF87a就可以，而png或者jpg需要用工具才能伪装，因为他的文件头不是可打印字符，与文件上传相结合出题，如果题目要求上传一个GIF文件，那么我们可以在一句话木马前面加上GIF89a&#x2F;GIF87a，那它就是“GIF”文件了</li>
+<li>出题方式：<br> 追加插入<br>基于图像的隐写（由于它是一个动图，所以可能在某一帧插入敏感信息）<br>基于时间的隐写（不同的延迟时间代表不同的数据）<br>Kali中提取延迟时间的命令</li>
+<li>做题方法<br>用identify命令获取每一帧之间的时间间隔，想想有没有可能和密码学结合起来，每一帧的时间间隔对应一个字符。</li>
+</ul>
+<h4 id="图片隐写三板斧"><a href="#图片隐写三板斧" class="headerlink" title="图片隐写三板斧"></a>图片隐写三板斧</h4><h5 id="第一板斧：010editor-strings"><a href="#第一板斧：010editor-strings" class="headerlink" title="第一板斧：010editor strings"></a>第一板斧：010editor strings</h5><ul>
+<li>Strings命令：strings flag.png | grep “keyword”。这样就只显示flag.png中的包含keyword的字符串</li>
+</ul>
+<h5 id="第二板斧：stegsolve-zsteg"><a href="#第二板斧：stegsolve-zsteg" class="headerlink" title="第二板斧：stegsolve zsteg"></a>第二板斧：stegsolve zsteg</h5><p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg"></p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg"></p>
+<h5 id="第三板斧：binwalk-foremost"><a href="#第三板斧：binwalk-foremost" class="headerlink" title="第三板斧：binwalk foremost"></a>第三板斧：binwalk foremost</h5><ul>
+<li>fcrackzip命令：用于爆破zip文件的密码</li>
+<li>可以使用字典来爆破，这个wordlist.txt是字典，后面的zip文件就是待破解的压缩包</li>
+<li>fcrackzip -D -p &#x2F;path&#x2F;to&#x2F;wordlist.txt protected.zip</li>
+<li>如果密码是比较简单的格式，就可以直接使用命令</li>
+<li>如果密码格式比较简单，可以直接用简单的指令进行破解<ul>
+<li>fcrackzip -b -l 4 -s “0123456789” protected.zip<br>这样的格式就是密码4位全是数字</li>
+<li>fcrackzip -b -l 4 -s “abcdefghijklmnopqrstuvwxyz” protected.zip<br>这样的就是4位全是字母</li>
+<li>fcrackzip -b -l 4 -s “abcdefghijklmnopqrstuvwxyz0123456789” protected.zip<br> 这样就是小写字母与数字的集合</li>
+</ul>
+</li>
+<li>Foremost：直接提取可能隐藏在图片中的文件</li>
+<li>Binwalk -e 1.png 也可以直接提取png图片里面的文件<br>Foremost  1.jpg<br>这样就会生成一个out文件，里面是提取出来的文件</li>
+<li>Binwalk：查看该图片是否隐藏其他文件。</li>
+<li>Pcrt.py：脚本工具，用于检查png图片的crc校验码从而直接修复数据</li>
+<li>Zsteg：可以检测png和bmp中的隐写数据，功能非常强大，可以用它来检测LSB中的信息隐藏通道。</li>
+</ul>
+<h5 id="板斧升级"><a href="#板斧升级" class="headerlink" title="板斧升级"></a>板斧升级</h5><ul>
+<li>第一板斧升级：利用png图片中的crc进行图片的宽高修复等。</li>
+<li>第二板斧升级：可能将LSB中隐藏的信息加密成密文，这是我们需要找到密钥破解。</li>
+<li>工具：cloacked-pixel中的lsb.py脚本</li>
+</ul>
+<h3 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h3><ul>
+<li>首要关注：音频中有关基本属性（标题，创作者等等）的信息。</li>
+<li>音频文件后缀包括mp3（常见），wav（常见），wma，ape等等。</li>
+</ul>
+<h4 id="Mp3（有损）"><a href="#Mp3（有损）" class="headerlink" title="Mp3（有损）"></a>Mp3（有损）</h4><ul>
+<li>主要特点是将人耳不敏感的高频部分进行压缩，保留低频部分。</li>
+</ul>
+<h4 id="基于波形图的隐写"><a href="#基于波形图的隐写" class="headerlink" title="基于波形图的隐写"></a>基于波形图的隐写</h4><ul>
+<li>如果音频文件是单声道就只有一个波形图，如果有两个，就有两个波形图，一些规则的波形图很可能隐藏某些密文，提取出来即可分析。</li>
+<li>工具：Audacity（分析波形图等等）</li>
+</ul>
+<h4 id="基于频谱图的隐写"><a href="#基于频谱图的隐写" class="headerlink" title="基于频谱图的隐写"></a>基于频谱图的隐写</h4><p>直接查看频谱图即可</p>
+<h4 id="音频LSB隐写"><a href="#音频LSB隐写" class="headerlink" title="音频LSB隐写"></a>音频LSB隐写</h4><ul>
+<li>经常使用silenteye来进行分析隐写题目，需要密码。</li>
+<li>MP3文件隐写：Mp3文件（有损压缩，其出题范围很小）：Mp3Stego（提取隐藏在mp3或者wav中隐藏文件的工具），当用mp3stego解码时，需要把mp3放在Decode.exe相同的文件夹下。</li>
+</ul>
+<h4 id="拨号音识别"><a href="#拨号音识别" class="headerlink" title="拨号音识别"></a>拨号音识别</h4><h4 id="脉冲拨号原理"><a href="#脉冲拨号原理" class="headerlink" title="脉冲拨号原理"></a>脉冲拨号原理</h4><p>拨号盘在回转的时候控制电路节点的断和续，拨3，断续3次，拨0，断续10次以此类推。这个不容易被交换机识别且太慢。</p>
+<h4 id="双音多频拨号原理"><a href="#双音多频拨号原理" class="headerlink" title="双音多频拨号原理"></a>双音多频拨号原理</h4><p>每个数字或字符都由一个高频和一个低频组成。</p>
+<h4 id="音频隐写总结："><a href="#音频隐写总结：" class="headerlink" title="音频隐写总结："></a>音频隐写总结：</h4><ul>
+<li>先用010查看是否有隐藏文件或者冗余信息</li>
+<li>然后使用audacity查看波形图或者频谱图</li>
+<li>最后如果是wav文件，考虑LSB隐写（Silenteye），如果是mp3文件，使用mp3stego</li>
+</ul>
+<h3 id="视频隐写"><a href="#视频隐写" class="headerlink" title="视频隐写"></a>视频隐写</h3><ul>
+<li>视频就是图像和音频的总和，只要把两者分离出来就可以按照思路解题，常见的视频文件格式为avi，mov，rmvb和mp4等。</li>
+<li>对于视频的帧提取，可以用ffmpeg或者video to picture，对于flash文件的提取，可以用flash decompiler trillix。</li>
+</ul>
+<h3 id="文本隐写"><a href="#文本隐写" class="headerlink" title="文本隐写"></a>文本隐写</h3><p>文本内容的隐写（基本上归于密码）</p>
+<h3 id="Word隐写"><a href="#Word隐写" class="headerlink" title="Word隐写"></a>Word隐写</h3><p>最基本的是在文件属性中隐藏信息，也可以通过写入白色文字，插入文本框或者图形遮挡等<br>由于word文件头和zip一样，所以都可以改后缀，解压</p>
+<h3 id="PDF的隐写"><a href="#PDF的隐写" class="headerlink" title="PDF的隐写"></a>PDF的隐写</h3><p>一个pdf文件分为头部，文件体和交叉引用表和尾部4部分。<br>头部：pdf文件第一行是标识字符，随后跟的是版本号</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg"></p>
+<p>文件体：由文件内容的一系列obj对象组成</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg"></p>
+<p>交叉引用表：标识字符是xref</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg"></p>
+<p>尾部：</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg"></p>
+<p>Pdf的隐写比较复杂</p>
+<h5 id="总结常见套路"><a href="#总结常见套路" class="headerlink" title="总结常见套路"></a>总结常见套路</h5><p>1：利用图片遮挡住隐藏的内容<br>2：在pdf文字里面隐藏信息，这里我们用kali自带的工具提取所有的文本内容，查看隐藏的信息<br> pdftotext 1.pdf flag.txt<br> 将1.pdf里面的内容提取出来保存在flag.txt里面<br>3：利用obj对象隐藏信息。Obj中的对象经过zlib算法压缩，插入到经过压缩的obj对象，利用该对象隐藏信息。使用工具PDFStreamDumper即可查看obj对象解压缩。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/MISC-%E9%9A%90%E5%86%99/" data-id="cm8vgi2p4000168v6gggh5ekw" data-title="MISC-隐写" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/30/HTML/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/">MISC-隐写</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/HTML/">HTML</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/">base64解码脚本</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/python/">python</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/x86-2/">x86.2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
