@@ -71,6 +71,37 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UPX脱壳" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:54:37.827Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>将文件拖入dbg，找到pushad之后点击<br>![[Pasted image 20250318213854.png]]<br>![[Pasted image 20250318213927.png]]<br>点击在此设置EIP，然后按F8运行<br>![[Pasted image 20250318214058.png]]<br>在ESP变红之后在右下角第一行设置断点<br>![[Pasted image 20250318214227.png]]<br>此处push到jne有循环，然后点击sub，再点击调试中的运行到此选区，即F4<br>![[Pasted image 20250318214322.png]]<br>然后继续F8<br>![[Pasted image 20250318214504.png]]<br>大跳之后到达call这里，所以这里为程序真正的入口<br>![[Pasted image 20250318214633.png]]<br>用系统自带的脱壳插件脱壳，点击Dump,保存文档后点Get Imports<br>![[Pasted image 20250318214838.png]]<br>把前边是错号的删掉，然后点击IAT Autosearch;就好了<br>然后用用小辣椒(CFF Explorer VII)进行修复，</p>
+<p>加上勾选，如下图所示，然后点确定<br>![[Pasted image 20250318215528.png]]<br>取消勾选，留下第三个，点确定</p>
+<p>![[Pasted image 20250318215558.png]]<br>这样就完成手动脱UPX壳了。<br>![[5d614689965801e033ab69dc36a790d.jpg]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" data-id="cm8vgrrpr0000c4v6gz5u4i3w" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-流量分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="article-date">
@@ -1053,70 +1084,6 @@ return 0;
 
 
   
-    <article id="post-x86-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/30/x86-2/" class="article-date">
-  <time class="dt-published" datetime="2025-03-30T09:40:56.000Z" itemprop="datePublished">2025-03-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/30/x86-2/">x86.2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="x86"><a href="#x86" class="headerlink" title="x86"></a>x86</h1><p>eflag:<br>![[eflags 1.png]]</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈（Stack）是一种常见的数据结构，在计算机科学中具有重要的应用价值。栈的操作受限于后进先出（LIFO, Last In First Out）的原则，这种特点使得栈在处理特定类型的问题时非常高效。本文将详细解析栈的本质和特点，并通过生活中的例子和代码实现来深入理解栈的应用。</p>
-<h3 id="栈的本质和特点"><a href="#栈的本质和特点" class="headerlink" title="栈的本质和特点"></a>栈的本质和特点</h3><p>栈是一种线性数据结构，只允许在一端进行插入和删除操作，这一端称为栈顶（Top）。与栈顶相对的另一端称为栈底（Bottom），栈底是固定的，不进行操作</p>
-<h3 id="栈有几种基本操作："><a href="#栈有几种基本操作：" class="headerlink" title="栈有几种基本操作："></a>栈有几种基本操作：</h3><p>压栈（Push）：将一个元素添加到栈顶。<br>出栈（Pop）：移除并返回栈顶元素。<br>取栈顶元素（Peek or Top）：返回栈顶元素但不移除它。<br>检查栈是否为空（isEmpty）：返回布尔值，指示栈是否为空。<br>检查栈是否已满（isFull）：返回布尔值，指示栈是否已满（主要用于固定大小的栈）。</p>
-<h3 id="栈的特点"><a href="#栈的特点" class="headerlink" title="栈的特点"></a>栈的特点</h3><ul>
-<li>后进先出<br>栈的最主要特点是后进先出，即最新加入的元素最先被移除。这种特性使得栈特别适用于某些特定的应用场景。</li>
-<li>操作受限<br>与其他数据结构相比，栈的操作比较受限。只能在栈顶进行压栈和出栈操作，不能直接访问栈中的任意元素。</li>
-<li>动态调整<br>栈可以是固定大小的，也可以是动态调整大小的。动态栈会根据需要自动调整其容量。</li>
-</ul>
-<h3 id="栈的作用"><a href="#栈的作用" class="headerlink" title="栈的作用"></a>栈的作用</h3><ul>
-<li>程序栈用于存放进程运行期间所需的部分数据（存放局部变量，暂存函数返回地址，传递的参数，部分寄存器）</li>
-<li>在程序运行过程中，栈中的数据变化过程是程序操作数据的本质体现</li>
-<li>栈可以用于追踪程序的函数调用过程</li>
-</ul>
-<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><ul>
-<li>定义：堆是动态分配内存。程序在运行时可以用 malloc 或 new 申请任意大小的内存，程序员需要负责在适当的时候用 free 或 delete 释放内存。</li>
-<li>如果某动态内存不再使用，需要将其释放掉，否则会发生内存泄露现象</li>
-<li>特点：堆是从低地址向高地址增长的。</li>
-</ul>
-<h2 id="进程空间布局"><a href="#进程空间布局" class="headerlink" title="进程空间布局"></a>进程空间布局</h2><ul>
-<li>进程的内存空间在结构上是有规律的，特别是对于Linux系统上的进程，其内存空间一般可以粗略地分为几大段，从高内存到低内存排列如下：</li>
-<li>内核态内存空间：其大小一般比较固定（可以在编译时调整），32位系统和64位系统的值不一样。</li>
-<li>用户态的堆段：大小不固定，可以用 ulimit -s 进行调整，默认一般为8M，从高地址向低地址增长。</li>
-<li>数据段：主要是进程初始化和未初始化的全局数据总和，还有编译器生成的一些辅助数据结构，大小取决于具体进程，其位置紧挨着堆段。</li>
-<li>代码段：主要是进程的指令，包括用户代码和编译器生成的辅助代码，大小取决于具体程序，但起始位置在32位还是64位一般固定（-fPIC，-fPIE等除外）。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/30/x86-2/" data-id="cm8vgb38r0000vsv6299j9e5v" data-title="x86.2" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1153,6 +1120,10 @@ return 0;
       <ul>
         
           <li>
+            <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">流量分析</a>
           </li>
         
@@ -1166,10 +1137,6 @@ return 0;
         
           <li>
             <a href="/2025/03/30/retlibc1/">retlibc1</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/PTF/">PTF</a>
           </li>
         
       </ul>
