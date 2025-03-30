@@ -71,6 +71,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UPX脱壳" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:50:48.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">UPX脱壳</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>将文件拖入dbg，找到pushad之后点击<br>![[Pasted image 20250318213854.png]]<br>![[Pasted image 20250318213927.png]]<br>点击在此设置EIP，然后按F8运行<br>![[Pasted image 20250318214058.png]]<br>在ESP变红之后在右下角第一行设置断点<br>![[Pasted image 20250318214227.png]]<br>此处push到jne有循环，然后点击sub，再点击调试中的运行到此选区，即F4<br>![[Pasted image 20250318214322.png]]<br>然后继续F8<br>![[Pasted image 20250318214504.png]]<br>大跳之后到达call这里，所以这里为程序真正的入口<br>![[Pasted image 20250318214633.png]]<br>用系统自带的脱壳插件脱壳，点击Dump,保存文档后点Get Imports<br>![[Pasted image 20250318214838.png]]<br>把前边是错号的删掉，然后点击IAT Autosearch;就好了<br>然后用用小辣椒(CFF Explorer VII)进行修复，</p>
+<p>加上勾选，如下图所示，然后点确定<br>![[Pasted image 20250318215528.png]]<br>取消勾选，留下第三个，点确定</p>
+<p>![[Pasted image 20250318215558.png]]<br>这样就完成手动脱UPX壳了。<br>![[5d614689965801e033ab69dc36a790d.jpg]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" data-id="cm8vgn7nh000040v6hjkfb12e" data-title="UPX脱壳" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Tea加密" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/" class="article-date">
@@ -894,58 +935,12 @@ return 0;
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-03-30T09:19:51.640Z" itemprop="datePublished">2025-03-30</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/03/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/30/hello-world/" data-id="cm8vfjkke0000zsv6gy3q8iom" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -976,6 +971,10 @@ return 0;
       <ul>
         
           <li>
+            <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/">UPX脱壳</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
           </li>
         
@@ -989,10 +988,6 @@ return 0;
         
           <li>
             <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/">MISC-隐写</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/HTML/">HTML</a>
           </li>
         
       </ul>
