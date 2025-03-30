@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | Hexo</title>
+  <title>retlibc1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Payload为p32（system）+”junk”+p32（”&#x2F;bin&#x2F;sh”） 静态分析 通过字符串定位关键函数主要利用了2个操作：先通过键查 看所有字符串，再通过键查看某个字符串的交叉引用。  在键盘上按键，都可以将数字转换为十六进 制。  异或通用脚本target&#x3D;[密文]key&#x3D;密钥res&#x3D;[]for i in range(len(tar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2025/03/30/hello-world/index.html">
+<meta property="og:title" content="retlibc1">
+<meta property="og:url" content="http://example.com/2025/03/30/retlibc1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Payload为p32（system）+”junk”+p32（”&#x2F;bin&#x2F;sh”） 静态分析 通过字符串定位关键函数主要利用了2个操作：先通过键查 看所有字符串，再通过键查看某个字符串的交叉引用。  在键盘上按键，都可以将数字转换为十六进 制。  异或通用脚本target&#x3D;[密文]key&#x3D;密钥res&#x3D;[]for i in range(len(tar">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-30T09:19:51.640Z">
-<meta property="article:modified_time" content="2025-03-30T09:19:51.640Z">
+<meta property="article:published_time" content="2025-03-30T09:48:42.000Z">
+<meta property="article:modified_time" content="2025-03-30T09:49:00.643Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-retlibc1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/03/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-03-30T09:19:51.640Z" itemprop="datePublished">2025-03-30</time>
+    <a href="/2025/03/30/retlibc1/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:48:42.000Z" itemprop="datePublished">2025-03-30</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
+      retlibc1
     </h1>
   
 
@@ -95,24 +95,35 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>Payload为p32（system）+”junk”+p32（”&#x2F;bin&#x2F;sh”）</p>
+<h2 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h2><ul>
+<li><p>通过字符串定位关键函数主要利用了2个操作：先通过键查 看所有字符串，再通过键查看某个字符串的交叉引用。</p>
+</li>
+<li><p>在键盘上按键，都可以将数字转换为十六进 制。</p>
+</li>
+<li><p>异或通用脚本<br>target&#x3D;[密文]<br>key&#x3D;<a href="%E4%B8%8B%E6%A0%870%EF%BC%8C1%EF%BC%8C2......">密钥</a><br>res&#x3D;[]<br>for i in range(len(target)):<br>   res.append(key[i]^target[i])<br>print res<br>print ‘’.join([chr(z) for z in res])</p>
+</li>
+<li><p>常见的压缩壳包括UPX、ASPack、Nspack（北斗压<br>缩壳）等，常见的加密壳有VMProtect、ASProtect等</p>
+</li>
+<li><p>在反汇编窗口中，选中的指令的背景会变为紫色。在图5.3.12中，双击 字符串后该指令已经变为紫色，按键，下断点，如图5.3.13所示， 指令地址的背景变为红色，断点指令的地址是0040100d。对已经下断 点的指令再按键，可以取消断点。</p>
+</li>
+<li><p>如果下了多个断点，想查看所有断点信息，可以按组合键显示 断点窗口，如图5.3.14所示，这里我们只有一个断点。选中断点后单击 鼠标右键，可以删除或者禁用断点，再按组合键就能切换回调 试界面。</p>
+</li>
+<li><p>将程序拖入IDA后，单击工具栏的Debugger，选择Select debugger，选 择“Local Windows debugger”。</p>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li><p>所有转换为十六进制的数都在可打印范围内，可以逐个选中后单击鼠标右键选择Char或者在键盘上按<R>键将其转换为字符</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/03/30/hello-world/" data-id="cm8vfjkke0000zsv6gy3q8iom" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/03/30/retlibc1/" data-id="cm8vgkjg70000eov6a0tq3wpr" data-title="retlibc1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -122,15 +133,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2025/03/30/x86/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          x86
-        
-      </div>
-    </a>
   
+    <a href="/2025/03/30/PTF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PTF</div>
+    </a>
   
 </nav>
 

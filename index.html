@@ -71,6 +71,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-retlibc1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/retlibc1/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:48:42.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/retlibc1/">retlibc1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Payload为p32（system）+”junk”+p32（”&#x2F;bin&#x2F;sh”）</p>
+<h2 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h2><ul>
+<li><p>通过字符串定位关键函数主要利用了2个操作：先通过键查 看所有字符串，再通过键查看某个字符串的交叉引用。</p>
+</li>
+<li><p>在键盘上按键，都可以将数字转换为十六进 制。</p>
+</li>
+<li><p>异或通用脚本<br>target&#x3D;[密文]<br>key&#x3D;<a href="%E4%B8%8B%E6%A0%870%EF%BC%8C1%EF%BC%8C2......">密钥</a><br>res&#x3D;[]<br>for i in range(len(target)):<br>   res.append(key[i]^target[i])<br>print res<br>print ‘’.join([chr(z) for z in res])</p>
+</li>
+<li><p>常见的压缩壳包括UPX、ASPack、Nspack（北斗压<br>缩壳）等，常见的加密壳有VMProtect、ASProtect等</p>
+</li>
+<li><p>在反汇编窗口中，选中的指令的背景会变为紫色。在图5.3.12中，双击 字符串后该指令已经变为紫色，按键，下断点，如图5.3.13所示， 指令地址的背景变为红色，断点指令的地址是0040100d。对已经下断 点的指令再按键，可以取消断点。</p>
+</li>
+<li><p>如果下了多个断点，想查看所有断点信息，可以按组合键显示 断点窗口，如图5.3.14所示，这里我们只有一个断点。选中断点后单击 鼠标右键，可以删除或者禁用断点，再按组合键就能切换回调 试界面。</p>
+</li>
+<li><p>将程序拖入IDA后，单击工具栏的Debugger，选择Select debugger，选 择“Local Windows debugger”。</p>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li><p>所有转换为十六进制的数都在可打印范围内，可以逐个选中后单击鼠标右键选择Char或者在键盘上按<R>键将其转换为字符</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/retlibc1/" data-id="cm8vgkjg70000eov6a0tq3wpr" data-title="retlibc1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-PTF" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/PTF/" class="article-date">
@@ -855,6 +917,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/30/retlibc1/">retlibc1</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/PTF/">PTF</a>
           </li>
         
@@ -868,10 +934,6 @@
         
           <li>
             <a href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/">base64解码脚本</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/python/">python</a>
           </li>
         
       </ul>
