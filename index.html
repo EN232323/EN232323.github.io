@@ -71,6 +71,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Tea加密" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:49:59.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>tea算法的主要特征表现在sum和delta变量，以及3行核心加密中出现的右移4左移5，两行各有3个小括号互相异或<br>![[23227cf2b7721201b74a3d487c9a0fb.jpg]]</p>
+<p>在题目中看到这些特征时就应该警醒这是tea相关算法<br>原理：![[4a5d43dc97f4f9cc4a2ee3e28c1296e.jpg]]</p>
+<p>delta的值一般为0x9E3779B9(-0x61C88647)，但题目中往往会改变它的值，并不影响算法的逆向<br>加密脚本：<br>void tea_enc(uint32_t* v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是明文的左、右半部分<br>    uint32_t sum &#x3D; 0;               &#x2F;&#x2F; sum用作加密过程中的一个累加变量<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;以下3行是核心加密过程，题目中往往会对部分细节做出修改（但由于异或的对称性质，根本不需要记，写解密函数时照抄就行了）<br>        sum +&#x3D; delta;<br>        v0 +&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        v1 +&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>    }<br>    &#x2F;&#x2F; v0和v1只是加密的临时变量，因此加密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}<br>解密脚本：<br>void tea_dec(uint32_t* v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是密文的左、右半部分<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    uint32_t sum &#x3D; 32 * delta;      &#x2F;&#x2F;此处需要分析32轮加密结束后sum的值与delta的变化, 以此处加密为例子，32轮每次sum+&#x3D;delta，因此最后sum&#x3D;32<em>delta<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;根据加密时的顺序颠倒下面3行的顺序，将加法改为减法（异或部分都是整体，不用管），就是逆向解密过程<br>        v1 -&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>        v0 -&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        sum -&#x3D; delta;<br>    }<br>    &#x2F;&#x2F; 因此解密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}<br>例题：<a target="_blank" rel="noopener" href="https://github.com/XDSEC/MoeCTF_2022">https://github.com/XDSEC/MoeCTF_2022</a><br>脚本： #include &lt;stdint.h&gt;<br>#include &lt;stdio.h&gt;<br>void tea_dec(uint32_t</em> v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是密文的左、右半部分<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    uint32_t sum &#x3D; 32 * delta;      &#x2F;&#x2F;此处需要分析32轮加密结束后sum的值与delta的变化, 以此处加密为例子，32轮每次sum+&#x3D;delta，因此最后sum&#x3D;32*delta<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;根据加密时的顺序颠倒下面3行的顺序，将加法改为减法（异或部分都是整体，不用管），就是逆向解密过程<br>        v1 -&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>        v0 -&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        sum -&#x3D; delta;<br>    }<br>    &#x2F;&#x2F; 解密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}</p>
+<p>int main() {<br>    &#x2F;&#x2F; k为加解密密钥，4个32位无符号整数，密钥长度为128位<br>    uint32_t k[4] &#x3D; {1, 2, 3, 4};<br>    &#x2F;&#x2F; v为要加解密的数据，两个32位无符号整数<br>    &#x2F;&#x2F;但是稍微难一点点的都不会直接加密两个uint32_t，除非签到题。像这里的例子就是给了32个uint8_t<br>    &#x2F;&#x2F;（常见的题目还有给几个uint32_t的，其实无非是拆开写成0x17、0x65…和连着写成0x1765的区别）<br>    &#x2F;&#x2F;在后面的循环里每次传两组，每组4个组成uint32_t用于tea算法<br>    int8_t input[33] &#x3D; {0x17, 0x65, 0x54, 0x89, 0xed, 0x65, 0x46, 0x32, 0x3d, 0x58, 0xa9, 0xfd, 0xe2, 0x5e, 0x61, 0x97,<br>                        0xe4, 0x60, 0xf1, 0x91, 0x73, 0xe9, 0xe9, 0xa2, 0x59, 0xcb, 0x9a, 0x99, 0xec, 0xb1, 0xe1, 0x7d};</p>
+<pre><code>for (int i = 0; i &lt; 32; i += 8) &#123;
+    //每组4个组成uint32_t用于tea算法，tea算法每次加解密操作的v一定是两个uint_32，至于怎么传入两个uint_32，题目有各种呈现方式，需要做题者自行分析
+    uint32_t v[2] = &#123;*(uint32_t*)&amp;input[i], *(uint32_t*)&amp;input[i + 4]&#125;;
+    tea_dec(v, k);
+    
+    // tea输出字符的固定算法，外层循环两次是因为明文分为左半和右半两个uint32_t
+    // 内层循环4次是因为一个字符占1个字节即8位，每次&amp;0xff可以摘下最后1字节打印出对应ASCII字符，然后&gt;&gt;8准备下一字节
+    for (int j = 0; j &lt; 2; j++) &#123;
+        for (int k = 0; k &lt; 4; k++) &#123;
+            printf(&quot;%c&quot;, v[j] &amp; 0xff);
+            v[j] &gt;&gt;= 8;
+        &#125;
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/Tea%E5%8A%A0%E5%AF%86/" data-id="cm8vgm34v0000tsv62hu9gorc" data-title="Tea加密" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-retlibc1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/03/30/retlibc1/" class="article-date">
@@ -917,6 +976,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/30/retlibc1/">retlibc1</a>
           </li>
         
@@ -930,10 +993,6 @@
         
           <li>
             <a href="/2025/03/30/HTML/">HTML</a>
-          </li>
-        
-          <li>
-            <a href="/2025/03/30/base64%E8%A7%A3%E7%A0%81%E8%84%9A%E6%9C%AC/">base64解码脚本</a>
           </li>
         
       </ul>

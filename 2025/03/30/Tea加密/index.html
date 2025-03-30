@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Tea加密 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="tea算法的主要特征表现在sum和delta变量，以及3行核心加密中出现的右移4左移5，两行各有3个小括号互相异或![[23227cf2b7721201b74a3d487c9a0fb.jpg]] 在题目中看到这些特征时就应该警醒这是tea相关算法原理：![[4a5d43dc97f4f9cc4a2ee3e28c1296e.jpg]] delta的值一般为0x9E3779B9(-0x61C88647)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tea加密">
+<meta property="og:url" content="http://example.com/2025/03/30/Tea%E5%8A%A0%E5%AF%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="tea算法的主要特征表现在sum和delta变量，以及3行核心加密中出现的右移4左移5，两行各有3个小括号互相异或![[23227cf2b7721201b74a3d487c9a0fb.jpg]] 在题目中看到这些特征时就应该警醒这是tea相关算法原理：![[4a5d43dc97f4f9cc4a2ee3e28c1296e.jpg]] delta的值一般为0x9E3779B9(-0x61C88647)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-30T09:49:59.000Z">
+<meta property="article:modified_time" content="2025-03-30T09:50:17.553Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Tea加密" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T09:49:59.000Z" itemprop="datePublished">2025-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Tea加密
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>tea算法的主要特征表现在sum和delta变量，以及3行核心加密中出现的右移4左移5，两行各有3个小括号互相异或<br>![[23227cf2b7721201b74a3d487c9a0fb.jpg]]</p>
+<p>在题目中看到这些特征时就应该警醒这是tea相关算法<br>原理：![[4a5d43dc97f4f9cc4a2ee3e28c1296e.jpg]]</p>
+<p>delta的值一般为0x9E3779B9(-0x61C88647)，但题目中往往会改变它的值，并不影响算法的逆向<br>加密脚本：<br>void tea_enc(uint32_t* v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是明文的左、右半部分<br>    uint32_t sum &#x3D; 0;               &#x2F;&#x2F; sum用作加密过程中的一个累加变量<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;以下3行是核心加密过程，题目中往往会对部分细节做出修改（但由于异或的对称性质，根本不需要记，写解密函数时照抄就行了）<br>        sum +&#x3D; delta;<br>        v0 +&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        v1 +&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>    }<br>    &#x2F;&#x2F; v0和v1只是加密的临时变量，因此加密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}<br>解密脚本：<br>void tea_dec(uint32_t* v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是密文的左、右半部分<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    uint32_t sum &#x3D; 32 * delta;      &#x2F;&#x2F;此处需要分析32轮加密结束后sum的值与delta的变化, 以此处加密为例子，32轮每次sum+&#x3D;delta，因此最后sum&#x3D;32<em>delta<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;根据加密时的顺序颠倒下面3行的顺序，将加法改为减法（异或部分都是整体，不用管），就是逆向解密过程<br>        v1 -&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>        v0 -&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        sum -&#x3D; delta;<br>    }<br>    &#x2F;&#x2F; 因此解密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}<br>例题：<a target="_blank" rel="noopener" href="https://github.com/XDSEC/MoeCTF_2022">https://github.com/XDSEC/MoeCTF_2022</a><br>脚本： #include &lt;stdint.h&gt;<br>#include &lt;stdio.h&gt;<br>void tea_dec(uint32_t</em> v, uint32_t* k) {<br>    uint32_t v0 &#x3D; v[0], v1 &#x3D; v[1];  &#x2F;&#x2F; v0、v1分别是密文的左、右半部分<br>    uint32_t delta &#x3D; 0xd33b470;     &#x2F;&#x2F;作为sum每次累加的变化值，题目中往往会修改此值<br>    uint32_t sum &#x3D; 32 * delta;      &#x2F;&#x2F;此处需要分析32轮加密结束后sum的值与delta的变化, 以此处加密为例子，32轮每次sum+&#x3D;delta，因此最后sum&#x3D;32*delta<br>    for (int i &#x3D; 0; i &lt; 32; i++) {  &#x2F;&#x2F; tea加密进行32轮<br>        &#x2F;&#x2F;根据加密时的顺序颠倒下面3行的顺序，将加法改为减法（异或部分都是整体，不用管），就是逆向解密过程<br>        v1 -&#x3D; ((v0 &lt;&lt; 4) + k[2]) ^ (v0 + sum) ^ ((v0 &gt;&gt; 5) + k[3]);<br>        v0 -&#x3D; ((v1 &lt;&lt; 4) + k[0]) ^ (v1 + sum) ^ ((v1 &gt;&gt; 5) + k[1]);<br>        sum -&#x3D; delta;<br>    }<br>    &#x2F;&#x2F; 解密后的内容要还给v数组<br>    v[0] &#x3D; v0;<br>    v[1] &#x3D; v1;<br>}</p>
+<p>int main() {<br>    &#x2F;&#x2F; k为加解密密钥，4个32位无符号整数，密钥长度为128位<br>    uint32_t k[4] &#x3D; {1, 2, 3, 4};<br>    &#x2F;&#x2F; v为要加解密的数据，两个32位无符号整数<br>    &#x2F;&#x2F;但是稍微难一点点的都不会直接加密两个uint32_t，除非签到题。像这里的例子就是给了32个uint8_t<br>    &#x2F;&#x2F;（常见的题目还有给几个uint32_t的，其实无非是拆开写成0x17、0x65…和连着写成0x1765的区别）<br>    &#x2F;&#x2F;在后面的循环里每次传两组，每组4个组成uint32_t用于tea算法<br>    int8_t input[33] &#x3D; {0x17, 0x65, 0x54, 0x89, 0xed, 0x65, 0x46, 0x32, 0x3d, 0x58, 0xa9, 0xfd, 0xe2, 0x5e, 0x61, 0x97,<br>                        0xe4, 0x60, 0xf1, 0x91, 0x73, 0xe9, 0xe9, 0xa2, 0x59, 0xcb, 0x9a, 0x99, 0xec, 0xb1, 0xe1, 0x7d};</p>
+<pre><code>for (int i = 0; i &lt; 32; i += 8) &#123;
+    //每组4个组成uint32_t用于tea算法，tea算法每次加解密操作的v一定是两个uint_32，至于怎么传入两个uint_32，题目有各种呈现方式，需要做题者自行分析
+    uint32_t v[2] = &#123;*(uint32_t*)&amp;input[i], *(uint32_t*)&amp;input[i + 4]&#125;;
+    tea_dec(v, k);
+    
+    // tea输出字符的固定算法，外层循环两次是因为明文分为左半和右半两个uint32_t
+    // 内层循环4次是因为一个字符占1个字节即8位，每次&amp;0xff可以摘下最后1字节打印出对应ASCII字符，然后&gt;&gt;8准备下一字节
+    for (int j = 0; j &lt; 2; j++) &#123;
+        for (int k = 0; k &lt; 4; k++) &#123;
+            printf(&quot;%c&quot;, v[j] &amp; 0xff);
+            v[j] &gt;&gt;= 8;
+        &#125;
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/Tea%E5%8A%A0%E5%AF%86/" data-id="cm8vgm34v0000tsv62hu9gorc" data-title="Tea加密" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/30/retlibc1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">retlibc1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/30/Tea%E5%8A%A0%E5%AF%86/">Tea加密</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/retlibc1/">retlibc1</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/PTF/">PTF</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/MISC-%E9%9A%90%E5%86%99/">MISC-隐写</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/30/HTML/">HTML</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
