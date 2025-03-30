@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>UPX脱壳 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="将文件拖入dbg，找到pushad之后点击![[Pasted image 20250318213854.png]]![[Pasted image 20250318213927.png]]点击在此设置EIP，然后按F8运行![[Pasted image 20250318214058.png]]在ESP变红之后在右下角第一行设置断点![[Pasted image 20250318214227.png]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UPX脱壳">
+<meta property="og:url" content="http://example.com/2025/03/30/UPX%E8%84%B1%E5%A3%B3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="将文件拖入dbg，找到pushad之后点击![[Pasted image 20250318213854.png]]![[Pasted image 20250318213927.png]]点击在此设置EIP，然后按F8运行![[Pasted image 20250318214058.png]]在ESP变红之后在右下角第一行设置断点![[Pasted image 20250318214227.png]">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-30T10:05:31.000Z">
+<meta property="article:modified_time" content="2025-03-30T10:06:05.452Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,83 +73,56 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2025" class="archive-year">2025</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2025/03/30/x86-2/" class="archive-article-date">
-  <time class="dt-published" datetime="2025-03-30T09:40:56.000Z" itemprop="datePublished">Mar 30</time>
+        <section id="main"><article id="post-UPX脱壳" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" class="article-date">
+  <time class="dt-published" datetime="2025-03-30T10:05:31.000Z" itemprop="datePublished">2025-03-30</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/03/30/x86-2/">x86.2</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      UPX脱壳
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2025/03/30/x86/" class="archive-article-date">
-  <time class="dt-published" datetime="2025-03-30T09:38:15.000Z" itemprop="datePublished">Mar 30</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/03/30/x86/">x86</a>
-    </h1>
-  
+        <p>将文件拖入dbg，找到pushad之后点击<br>![[Pasted image 20250318213854.png]]<br>![[Pasted image 20250318213927.png]]<br>点击在此设置EIP，然后按F8运行<br>![[Pasted image 20250318214058.png]]<br>在ESP变红之后在右下角第一行设置断点<br>![[Pasted image 20250318214227.png]]<br>此处push到jne有循环，然后点击sub，再点击调试中的运行到此选区，即F4<br>![[Pasted image 20250318214322.png]]<br>然后继续F8<br>![[Pasted image 20250318214504.png]]<br>大跳之后到达call这里，所以这里为程序真正的入口<br>![[Pasted image 20250318214633.png]]<br>用系统自带的脱壳插件脱壳，点击Dump,保存文档后点Get Imports<br>![[Pasted image 20250318214838.png]]<br>把前边是错号的删掉，然后点击IAT Autosearch;就好了<br>然后用用小辣椒(CFF Explorer VII)进行修复，</p>
+<p>加上勾选，如下图所示，然后点确定<br>![[Pasted image 20250318215528.png]]<br>取消勾选，留下第三个，点确定</p>
+<p>![[Pasted image 20250318215558.png]]<br>这样就完成手动脱UPX壳了。<br>![[5d614689965801e033ab69dc36a790d.jpg]]</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2025/03/30/hello-world/" class="archive-article-date">
-  <time class="dt-published" datetime="2025-03-30T09:19:51.640Z" itemprop="datePublished">Mar 30</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/03/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/30/UPX%E8%84%B1%E5%A3%B3/" data-id="cm8vh6dcm00008ov63lpcge86" data-title="UPX脱壳" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
   </div>
-</article>
   
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/30/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">流量分析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
 
 </section>
         
